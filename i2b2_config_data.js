@@ -10,6 +10,7 @@
 		  allowAnalysis: true,
 		  //installer: "/webclient/plugin_installer/",
 		  debug: false
+		  "CAS_server": "https://localhost:8443/cas-server/"
 		}
 	]
 	//-------------------------------------------------------------------------------------------
