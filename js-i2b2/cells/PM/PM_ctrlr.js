@@ -122,7 +122,9 @@ i2b2.PM._processUserConfig = function (data) {
 	try {
 		var t = i2b2.h.XPath(data.refXML, '//user/password')[0]; //[@token_ms_timeout]
 		i2b2.PM.model.login_password = i2b2.h.Xml2String(t);
-		
+		t = i2b2.h.XPath(data.refXML, '//user/user_name/text()')[0];
+	        i2b2.PM.model.login_username = i2b2.h.Xml2String(t);
+	        
 		var timeout = t.getAttribute('token_ms_timeout');
 		if (timeout == undefined ||  timeout < 300001)
 		{
@@ -134,7 +136,12 @@ i2b2.PM._processUserConfig = function (data) {
 		}
 	} catch (e) {
 		//console.error("Could not find returned password node in login XML");
-		i2b2.PM.model.login_password = "<password>"+data.msgParams.sec_pass+"</password>\n";
+	    i2b2.PM.model.login_password = "<password>"+data.msgParams.sec_pass+"</password>\n";
+	    if (i2b2.PM.model.CAS_server) {
+		    alert("Login attempt failed.");
+		    eraseCookie("CAS_ticket");
+		    i2b2.PM.doCASLogin(data.msgParams.sec_domain);
+		    return true;
 	}	
 	// clear the password
 	i2b2.PM.udlogin.inputPass.value = "";
@@ -278,8 +285,14 @@ i2b2.PM._processUserConfig = function (data) {
 
 // ================================================================================================== //
 i2b2.PM.doLogout = function() {
+    if (undefined != i2b2.PM.model.CAS_server) {
+	eraseCookie("CAS_ticket");
+	window.location=i2b2.PM.model.CAS_server + "logout";
+    } else {
 	// bug fix - must reload page to avoid dirty data from lingering
 	window.location.reload();
+    }
+
 }
 
 
