@@ -9,6 +9,7 @@
 		  urlCellPM: "http://webservices.i2b2.org/i2b2/services/PMService/",
 		  allowAnalysis: true,
 		  debug: false
+		  "CAS_server": "https://localhost:8443/cas-server/"
 		}
 	]
 	//-------------------------------------------------------------------------------------------

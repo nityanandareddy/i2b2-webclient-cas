@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head><title>CAS login pass-thru page</title></head>
+<body>
+
+<noscript>
+<p>You have turned off JavaScript or for some other reason,
+your web user agent is not running scripts.
+The i2b2 web client is implemented largely in JavaScript.
+If you'd like to use it, please turn on JavaScript.</p>
+</noscript>
+
+<script src="js-i2b2/cells/PM/cas_login.js"></script>
+<script language="javascript">
+// todo: get cas_server from i2b2_config_data.js
+var cas_server = "https://cas.kumc.edu/cas/"; // HARDCODED
+
+try {
+  i2b2.PM.set_cas_ticket_cookie_from_url();
+
+  // We assume the webclient page is at ./ relative to this login page.
+  document.location = "./"
+
+//} catch (e if e instanceOf i2b2.PM.CASTicketMissing) {
+} catch (e) {
+  // Go get a ticket and come back
+  document.location = cas_server + "?service=" + document.location;
+}
+</script>
+</body>
+</html>
