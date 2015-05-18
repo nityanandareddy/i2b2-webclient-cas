@@ -97,15 +97,20 @@ i2b2.PM.doLogin = function() {
 
 // ================================================================================================== //
 
-i2b2.PM._processUserConfigSuccess = function (data) {
-    try {
-		var t_passwd = i2b2.h.XPath(data.refXML, '//user/password')[0]; //[@token_ms_timeout]
-		i2b2.PM.model.login_password = i2b2.h.Xml2String(t_passwd);
-		var t_username = i2b2.h.XPath(data.refXML, '//user/user_name/text()')[0];
-	        i2b2.PM.model.login_username = i2b2.h.Xml2String(t_username);
-	        var timeout = t_passwd.getAttribute('token_ms_timeout');
-	        if (timeout == undefined ||  timeout < 300001) {
-		    i2b2.PM.model.IdleTimer.start(1800000-300000); //timeout); //timeout-60000);		
+
+	// save the valid data that was passed into the PM cell's data model
+	i2b2.PM.model.login_username = data.msgParams.sec_user;
+	try {
+		var t = i2b2.h.XPath(data.refXML, '//user/password')[0]; //[@token_ms_timeout]
+		i2b2.PM.model.login_password = i2b2.h.Xml2String(t);
+		t = i2b2.h.XPath(data.refXML, '//user/user_name/text()')[0];
+	        i2b2.PM.model.login_username = i2b2.h.Xml2String(t);
+	        
+		var timeout = t.getAttribute('token_ms_timeout');
+		if (timeout == undefined ||  timeout < 300001)
+		{
+		 i2b2.PM.model.IdleTimer.start(1800000-300000); //timeout); //timeout-60000);		
+
 		} else {
 		    i2b2.PM.model.IdleTimer.start(timeout-300000); //timeout); //timeout-60000);		
 		}
@@ -113,16 +118,11 @@ i2b2.PM._processUserConfigSuccess = function (data) {
 		//console.error("Could not find returned password node in login XML");
 	    i2b2.PM.model.login_password = "<password>"+data.msgParams.sec_pass+"</password>\n";
 	    if (i2b2.PM.model.CAS_server) {
-	    	if (readCookie("CAS_ticket")) {
-	    		eraseCookie("CAS_ticket");
-	    		i2b2.PM.doCASLogin();
-	    		return true;
-	    	} else {
-			console.error("I2b2 web client did not get a user account back. Perhaps the i2b2 server was restarted?");
-			alert("I2b2 web client got an unexpected response from the i2b2 server. Try reloading the page.");
-			return false;
-	    	}
-	    }
+
+		    alert("Login attempt failed.");
+		    eraseCookie("CAS_ticket");
+		    i2b2.PM.doCASLogin(data.msgParams.sec_domain);
+		    return true;
 	}	
 	// clear the password
 	i2b2.PM.udlogin.inputPass.value = "";
@@ -455,22 +455,15 @@ i2b2.PM._processUserConfig = function (data) {
 
 // ================================================================================================== //
 i2b2.PM.doLogout = function() {
-    i2b2.PM._destroyEurekaClinicalSessions(function() {
-	if (undefined != i2b2.PM.model.CAS_server) {
-	    eraseCookie("JSESSIONID");
-	    if (i2b2.PM.model.CAS_LOGOUT_TYPE === 'CAS') {
-		eraseCookie("CAS_ticket");
-		window.location=i2b2.PM.model.CAS_server + "logout";
-                return;
-	    }
-	}
-	if (i2b2.PM.model.EC_LOGOUT_LANDING_PAGE_URL) {
-	    window.location=i2b2.PM.model.EC_LOGOUT_LANDING_PAGE_URL;
-	} else {
-	    // bug fix - must reload page to avoid dirty data from lingering
-	    window.location.reload();
-	}
-    });
+
+    if (undefined != i2b2.PM.model.CAS_server) {
+	eraseCookie("CAS_ticket");
+	window.location=i2b2.PM.model.CAS_server + "logout";
+    } else {
+	// bug fix - must reload page to avoid dirty data from lingering
+	window.location.reload();
+    }
+
 }
 
 
