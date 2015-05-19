@@ -10,9 +10,9 @@ If you'd like to use it, please turn on JavaScript.</p>
 </noscript>
 
 <script src="js-i2b2/cells/PM/cas_login.js"></script>
-<script language="javascript">
-// todo: get cas_server from i2b2_config_data.js
-var cas_server = "https://cas.kumc.edu/cas/"; // HARDCODED
+<script type="text/javascript">
+
+var cas_server =i2b2.PM.casGetQueryParameters()['cas_server'];
 
 try {
   i2b2.PM.set_cas_ticket_cookie_from_url();
@@ -23,7 +23,7 @@ try {
 //} catch (e if e instanceOf i2b2.PM.CASTicketMissing) {
 } catch (e) {
   // Go get a ticket and come back
-  document.location = cas_server + "?service=" + document.location;
+  document.location = cas_server + "?service=" + encodeURIComponent(document.location);
 }
 </script>
 </body>

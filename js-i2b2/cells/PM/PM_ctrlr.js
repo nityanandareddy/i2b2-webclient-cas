@@ -95,12 +95,12 @@ i2b2.PM._processUserConfig = function (data) {
 	// save the valid data that was passed into the PM cell's data model
 	i2b2.PM.model.login_username = data.msgParams.sec_user;
 	try {
-		var t = i2b2.h.XPath(data.refXML, '//user/password')[0]; //[@token_ms_timeout]
-		i2b2.PM.model.login_password = i2b2.h.Xml2String(t);
-		t = i2b2.h.XPath(data.refXML, '//user/user_name/text()')[0];
-	        i2b2.PM.model.login_username = i2b2.h.Xml2String(t);
+		var t_passwd = i2b2.h.XPath(data.refXML, '//user/password')[0]; //[@token_ms_timeout]
+		i2b2.PM.model.login_password = i2b2.h.Xml2String(t_passwd);
+		var t_username = i2b2.h.XPath(data.refXML, '//user/user_name/text()')[0];
+	        i2b2.PM.model.login_username = i2b2.h.Xml2String(t_username);
 	        
-		var timeout = t.getAttribute('token_ms_timeout');
+		var timeout = t_passwd.getAttribute('token_ms_timeout');
 		if (timeout == undefined ||  timeout < 300001)
 		{
 		 i2b2.PM.model.IdleTimer.start(1800000-300000); //timeout); //timeout-60000);		
@@ -116,7 +116,8 @@ i2b2.PM._processUserConfig = function (data) {
 		    alert("Login attempt failed.");
 		    eraseCookie("CAS_ticket");
 		    i2b2.PM.doCASLogin(data.msgParams.sec_domain);
-		    return true;
+		return true;
+	    }
 	}	
 	// clear the password
 	i2b2.PM.udlogin.inputPass.value = "";
@@ -223,7 +224,9 @@ i2b2.PM._processUserConfig = function (data) {
 			alert("The PM Cell is down or the address in the properties file is incorrect.");	
 			//alert("Your account does not have access to any i2b2 projects.");		
 		}
-		try { i2b2.PM.view.modal.login.show(); } catch(e) {}
+	    if (undefined == i2b2.PM.model.CAS_server) {
+		    try { i2b2.PM.view.modal.login.show(); } catch(e) {}
+		}
 		return true;
 	} else if (projs.length == 1) {
 		// default to the only project the user has access to
@@ -249,6 +252,7 @@ i2b2.PM._processUserConfig = function (data) {
 i2b2.PM.doLogout = function() {
     if (undefined != i2b2.PM.model.CAS_server) {
 	eraseCookie("CAS_ticket");
+	eraseCookie("JSESSIONID");
 	window.location=i2b2.PM.model.CAS_server + "logout";
     } else {
 	// bug fix - must reload page to avoid dirty data from lingering
