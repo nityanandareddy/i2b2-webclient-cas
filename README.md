@@ -1,21 +1,22 @@
-# i2b2 Web Client Repository
+# i2b2-webclient-cas
 
-The i2b2 Web Client is a web based client that is installed on a web server. This client can be accessed by an authorized user who has access to a web browser. 
+This is a stock i2b2 1.8.05 web client patched with support for delegating authentication to Eureka via its patched [JASIG CAS](http://jasig.github.io/cas/4.1.x/index.html) server module, found at https://github.com/eurekaclinical/cas. JASIG CAS is a single sign-on system. This allows users of Eureka and i2b2 to login once and have access to both systems.
 
-The i2b2 Web Client Repository contains the source code for the i2b2 Web Client.
+The code is adapted from similar code for an older version of i2b2 by Dan Connolly found at https://bitbucket.org/DanC/i2b2-webclient-cas.
 
+## Versions of CAS Supported
 
-### Documentation
-Additional information about the i2b2 Web Client can be found on the [i2b2 Community Wiki](http://community.i2b2.org/wiki/dashboard.action "i2b2 Community Wiki") within the [i2b2 Sponsored Project - i2b2 Web Client](http://community.i2b2.org/wiki/display/webclient/Web+Client+Home) space.
+Eureka! currently uses a patched copy of CAS version 3.5.2. While these i2b2 patches have only been tested with Eureka!'s patched CAS, they likely also will work with stock CAS 3.5.2.
 
+## Installation
 
-## Development / Maintenance
-The code for the i2b2 Web Client is maintained by the i2b2 team.
+Coming soon...
 
-Plugins developed by the i2b2 Community can be found in the *i2b2/community-plugins/webclient* folder.
+## Configuration
 
+When using these patches, the i2b2 project management module's user data table becomes an authorization table. The code authenticates the user with Eureka! CAS, and then it checks the user data table for the existence of the user's account before authorizing the user. Any passwords in the user data table are ignored.
 
-## Reporting Issues
-If an issue is found with the i2b2 Web Client please submit an issue in the [i2b2 Bug Tracker](http://community.i2b2.org/jira/secure/Dashboard.jspa "i2b2 Bug Tracker") under the *i2b2 Web Client* project.
+## Licensing
 
-Suggestions for improvements or enhancements to the i2b2 Web Client can also be submitted into the i2b2 Bug Tracker.
+This code is released under the i2b2 Software License version 2.1, available at https://www.i2b2.org/software/i2b2_license.html.
+
