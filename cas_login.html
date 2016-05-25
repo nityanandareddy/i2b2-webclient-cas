@@ -23,7 +23,7 @@ try {
 //} catch (e if e instanceOf i2b2.PM.CASTicketMissing) {
 } catch (e) {
   // Go get a ticket and come back
-  document.location = cas_server + "?service=" + encodeURIComponent(document.location);
+  document.location = cas_server + "/login?service=" + encodeURIComponent(document.location);
 }
 </script>
 </body>
