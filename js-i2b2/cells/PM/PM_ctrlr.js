@@ -149,6 +149,7 @@ i2b2.PM._processUserConfig = function (data) {
 	    		i2b2.PM.doCASLogin(data.msgParams.sec_domain)
 	    		return true;
 	    	} else {
+	    		eraseCookie("CAS_ticket");
 			console.error("I2b2 web client did not get a user account back. The user may be unauthorized, or the i2b2 server was restarted.");
 			alert("I2b2 web client got an unexpected response from the i2b2 server. Click OK and try reloading the page.");
 			return false;
