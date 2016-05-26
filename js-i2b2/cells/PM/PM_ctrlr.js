@@ -100,22 +100,12 @@ i2b2.PM._processUserConfig = function (data) {
 	console.group("PROCESS Login XML");
 	console.debug(" === run the following command in Firebug to view message sniffer: i2b2.hive.MsgSniffer.show() ===");
 
-	// BUG FIX - WEBCLIENT-118
-	var browserIsIE8 = false;
-	var browserIsIE11 = false;
-	var ieInCompatibilityMode = false;
-	var ua = window.navigator.userAgent;
-	var msie = ua.indexOf("MSIE ");
-	if (msie > 0)
-		browserIsIE8 = true;
-	if(browserIsIE8){
-		if (ua.indexOf("Trident/4.0") > -1) {
-			ieInCompatibilityMode = true;
-		}
-	}
-	if(!(window.ActiveXObject) && "ActiveXObject" in window)
-		browserIsIE11 = true;
 
+	if (!data.refXML) {
+                console.error("I2b2 web client got no XML response from the i2b2 server. Maybe the server is not up?");
+                alert("I2b2 web client got no response from the i2b2 server. Click OK and reload the page in your browser to try again.");
+                return false;
+        }
 
 	// save the valid data that was passed into the PM cell's data model
 	i2b2.PM.model.login_username = data.msgParams.sec_user;
