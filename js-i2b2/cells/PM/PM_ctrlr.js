@@ -126,7 +126,7 @@ i2b2.PM.doLogin = function() {
 	    if (i2b2.PM.model.CAS_server) {
 	    	if (readCookie("CAS_ticket")) {
 	    		eraseCookie("CAS_ticket");
-	    		i2b2.PM.doCASLogin(data.msgParams.sec_domain)
+	    		i2b2.PM.doCASLogin(data.msgParams.sec_domain);
 	    		return true;
 	    	} else {
 	    		eraseCookie("CAS_ticket");
