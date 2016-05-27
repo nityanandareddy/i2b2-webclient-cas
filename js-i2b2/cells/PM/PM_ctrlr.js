@@ -109,7 +109,7 @@ i2b2.PM.doLogin = function() {
 	var errors = i2b2.h.XPath(data.refXML, "//response_header/result_status/status[@type='ERROR']/text()");
 	var t_error;
 	if (errors && errors.length > 0) {
-		t_error = errors[0];
+		t_error = i2b2.h.Xml2String(errors[0]);
 	} else {
 		t_error = null;
 	}
