@@ -109,7 +109,7 @@ i2b2.PM._processUserConfig = function (data) {
 
 	// save the valid data that was passed into the PM cell's data model
 	i2b2.PM.model.login_username = data.msgParams.sec_user;
-	var errors = i2b2.h.XPath(data.refXML, "//response_header/result_status/status[@type='ERROR']/text()")
+	var errors = i2b2.h.XPath(data.refXML, "//response_header/result_status/status[@type='ERROR']/text()");
 	var t_error;
 	if (errors && errors.length > 0) {
 		t_error = errors[0];
