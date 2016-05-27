@@ -119,7 +119,7 @@ i2b2.PM._processUserConfig = function (data) {
 
 	if (!data.refXML) {
                 console.error("I2b2 web client got no XML response from the i2b2 server. Maybe the server is not up?");
-                alert("I2b2 web client got no response from the i2b2 server. Click OK and reload the page in your browser to try again.");
+                alert("I2b2 web client got no response from the i2b2 server. Reload the page in your browser to try again.");
                 return false;
         }
 
@@ -139,7 +139,7 @@ i2b2.PM._processUserConfig = function (data) {
 		    	return false;
 		case 'EINTERNAL':
 			console.error('Internal server error.');
-		    	alert('An error occurred on the i2b2 server. Click OK and try reloading the page.');
+		    	alert('An error occurred on the i2b2 server. Try reloading the page.');
 		    	return false;
 	}
 	try {
@@ -167,7 +167,7 @@ i2b2.PM._processUserConfig = function (data) {
 	    		return true;
 	    	} else {
 			console.error("I2b2 web client did not get a user account back. Perhaps the i2b2 server was restarted?");
-			alert("I2b2 web client got an unexpected response from the i2b2 server. Click OK and try reloading the page.");
+			alert("I2b2 web client got an unexpected response from the i2b2 server. Try reloading the page.");
 			return false;
 	    	}
 	    }
