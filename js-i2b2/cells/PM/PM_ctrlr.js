@@ -162,8 +162,8 @@ i2b2.PM._processUserConfig = function (data) {
 		//console.error("Could not find returned password node in login XML");
 	    i2b2.PM.model.login_password = "<password>"+data.msgParams.sec_pass+"</password>\n";
 	    if (i2b2.PM.model.CAS_server) {
-	    	eraseCookie("CAS_ticket");
 	    	if (readCookie("CAS_ticket")) {
+	    		eraseCookie("CAS_ticket");
 	    		i2b2.PM.doCASLogin(data.msgParams.sec_domain);
 	    		return true;
 	    	} else {
