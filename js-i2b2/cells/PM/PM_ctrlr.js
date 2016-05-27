@@ -132,6 +132,16 @@ i2b2.PM._processUserConfig = function (data) {
 	} else {
 		t_error = null;
 	}
+	switch (t_error) {
+		case 'EAUTHORIZATION':
+			console.error('You are not authorized to use i2b2. Please request an account.');
+		    	alert('You are not authorized to use i2b2. Please request an account.');
+		    	return false;
+		case 'EINTERNAL':
+			console.error('Internal server error.');
+		    	alert('An error occurred on the i2b2 server. Click OK and try reloading the page.');
+		    	return false;
+	}
 	try {
 		var t_passwd = i2b2.h.XPath(data.refXML, '//user/password')[0]; //[@token_ms_timeout]
 		i2b2.PM.model.login_password = i2b2.h.Xml2String(t_passwd);
@@ -152,11 +162,7 @@ i2b2.PM._processUserConfig = function (data) {
 	    i2b2.PM.model.login_password = "<password>"+data.msgParams.sec_pass+"</password>\n";
 	    if (i2b2.PM.model.CAS_server) {
 	    	eraseCookie("CAS_ticket");
-	    	if (t_error === 'EAUTHORIZATION') {
-	    		console.error('You are not authorized to use i2b2. Please request an account.');
-	    		alert('You are not authorized to use i2b2. Please request an account.');
-	    		return false;
-	    	} else if (readCookie("CAS_ticket")) {
+	    	if (readCookie("CAS_ticket")) {
 	    		i2b2.PM.doCASLogin(data.msgParams.sec_domain);
 	    		return true;
 	    	} else {
