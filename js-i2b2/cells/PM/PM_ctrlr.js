@@ -125,6 +125,13 @@ i2b2.PM._processUserConfig = function (data) {
 
 	// save the valid data that was passed into the PM cell's data model
 	i2b2.PM.model.login_username = data.msgParams.sec_user;
+	var errors = i2b2.h.XPath(data.refXML, "//response_header/result_status/status[@type='ERROR']/text()")
+	var t_error;
+	if (errors && errors.length > 0) {
+		t_error = errors[0];
+	} else {
+		t_error = null;
+	}
 	try {
 		var t_passwd = i2b2.h.XPath(data.refXML, '//user/password')[0]; //[@token_ms_timeout]
 		i2b2.PM.model.login_password = i2b2.h.Xml2String(t_passwd);
@@ -144,13 +151,16 @@ i2b2.PM._processUserConfig = function (data) {
 		//console.error("Could not find returned password node in login XML");
 	    i2b2.PM.model.login_password = "<password>"+data.msgParams.sec_pass+"</password>\n";
 	    if (i2b2.PM.model.CAS_server) {
-	    	if (readCookie("CAS_ticket")) {
-	    		eraseCookie("CAS_ticket");
+	    	eraseCookie("CAS_ticket");
+	    	if (t_error === 'EAUTHORIZATION') {
+	    		console.error('You are not authorized to use i2b2. Please request an account.');
+	    		alert('You are not authorized to use i2b2. Please request an account.');
+	    		return false;
+	    	} else if (readCookie("CAS_ticket")) {
 	    		i2b2.PM.doCASLogin(data.msgParams.sec_domain);
 	    		return true;
 	    	} else {
-	    		eraseCookie("CAS_ticket");
-			console.error("I2b2 web client did not get a user account back. The user may be unauthorized, or the i2b2 server was restarted.");
+			console.error("I2b2 web client did not get a user account back. Perhaps the i2b2 server was restarted?");
 			alert("I2b2 web client got an unexpected response from the i2b2 server. Click OK and try reloading the page.");
 			return false;
 	    	}
