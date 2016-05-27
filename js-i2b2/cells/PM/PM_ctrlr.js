@@ -117,6 +117,7 @@ i2b2.PM.doLogin = function() {
 		case 'EAUTHORIZATION':
 			console.error('You are not authorized to use i2b2. Please request an account.');
 		    	alert('You are not authorized to use i2b2. Please request an account.');
+		    	i2b2.PM.doLogout();
 		    	return false;
 		case 'EINTERNAL':
 			console.error('Internal server error.');
