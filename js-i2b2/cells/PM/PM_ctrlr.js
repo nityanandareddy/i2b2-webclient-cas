@@ -120,6 +120,7 @@ i2b2.PM._processUserConfig = function (data) {
 		case 'EAUTHORIZATION':
 			console.error('You are not authorized to use i2b2. Please request an account.');
 		    	alert('You are not authorized to use i2b2. Please request an account.');
+		    	i2b2.PM.doLogout();
 		    	return false;
 		case 'EINTERNAL':
 			console.error('Internal server error.');
