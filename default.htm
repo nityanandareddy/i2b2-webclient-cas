@@ -226,8 +226,7 @@ function initI2B2()
 					// javascript function to display the modal login form: i2b2.hive.PM.doLoginDialog();
 					//cellObj.doConnectForm($('loginusr'),$('loginpass'),$('logindomain'), $('loginsubmit'));
 					//i2b2.PM.doLoginDialog();
-                                        var domain = i2b2.h.getJsonConfig('i2b2_config_data.js').casDomain;
-                                        i2b2.PM.doCASLogin(domain);
+                                        i2b2.PM.doCASLogin();
 					break;
 			}
 		})
