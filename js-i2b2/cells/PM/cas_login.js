@@ -25,8 +25,35 @@ if (undefined==i2b2.PM) { i2b2.PM = {}; }
  */
 i2b2.PM.doCASLogin = function() {
     var domainname = i2b2.h.getJsonConfig('i2b2_config_data.js').casDomain
-    var ticket = readCookie("CAS_ticket");
-
+    var session_or_ticket = null;
+    var login_password = i2b2.PM.model.login_password ? i2b2.PM.model.login_password : null;
+    var login_service = null;
+    if (login_password && !login_password.blank()) {
+        var start = login_password.indexOf("<");
+        var is_token_start = login_password.indexOf("is_token", start + 1);
+        var is_token_val = false;
+        if (is_token_start >= 0) {
+            var is_token_text_start = login_password.indexOf('"', is_token_start + 1);
+            if (is_token_text_start >= 0) {
+                var is_token_text_finish = login_password.indexOf('"', is_token_text_start + 1);
+                if (is_token_text_finish >= 0 && is_token_text_start < is_token_text_finish) {
+                    is_token_val = login_password.substring(is_token_text_start + 1, is_token_text_finish).toUpperCase() === 'TRUE';
+                }
+            }
+        }
+        if (is_token_val) {
+            var start_val = login_password.indexOf(">", is_token_start + 1);
+            var finish_val = start_val >= 0 ? login_password.indexOf("<", start_val + 1) : -1;
+            if (start_val >= 0 && finish_val >= 0 && start_val < finish_val) {
+                var session_key = login_password.substring(start_val + 1, finish_val);
+                if (session_key.startsWith('SessionKey:')) {
+                    session_or_ticket = session_key;
+                    login_service = i2b2.PM.model.login_username;
+                }
+            }
+        }
+    }
+        
     var domain, domains = i2b2.PM.model.Domains;
     for (i = 0; i < domains.length; i++) {
 	if (domains[i].domain == domainname) {
@@ -34,18 +61,22 @@ i2b2.PM.doCASLogin = function() {
 	    break;
 	}
     }
+    
     if (!domain) {
         alert('login failed: no such domain in i2b2 config: ' + domainname);
         return;
     }
-
-    var login_service = document.location + "cas_login.html?cas_server=" + encodeURIComponent(domain.CAS_server);
-
-    if (!ticket) {
+    
+    if (!session_or_ticket) {
+        session_or_ticket = readCookie("CAS_ticket");
+        login_service = document.location + "cas_login.html?cas_server=" + encodeURIComponent(domain.CAS_server);
+    }
+    
+    if (!session_or_ticket) {
 	document.location = login_service;
         return;
     }
-
+    
     i2b2.PM.model.CAS_server = domain.CAS_server;
     i2b2.PM.model.url = domain.urlCellPM;
     i2b2.PM.model.allow_analysis = _flag(domain.allowAnalysis, true);
@@ -59,12 +90,12 @@ i2b2.PM.doCASLogin = function() {
         is_shrine: Boolean.parseTo(domain.isSHRINE),
         project: domain.project,
         username: login_service,
-        password_text: ticket
+        password_text: session_or_ticket
     };
     var transportopts = {
         url: domain.urlCellPM,
         user: login_service,
-        password: ticket,
+        password: session_or_ticket,
         domain: domain.domain,
         project: domain.project
     };
