@@ -97,44 +97,15 @@ i2b2.PM.doLogin = function() {
 
 // ================================================================================================== //
 
-
-	if (!data.refXML) {
-                console.error("I2b2 web client got no XML response from the i2b2 server. Maybe the server is not up?");
-                alert("I2b2 web client got no response from the i2b2 server. Reload the page in your browser to try again.");
-                return false;
-        }
-
-	// save the valid data that was passed into the PM cell's data model
-	i2b2.PM.model.login_username = data.msgParams.sec_user;
-	var errors = i2b2.h.XPath(data.refXML, "//response_header/result_status/status[@type='ERROR']/text()");
-	var t_error;
-	if (errors && errors.length > 0) {
-		t_error = i2b2.h.Xml2String(errors[0]);
-	} else {
-		t_error = null;
-	}
-	switch (t_error) {
-		case 'EAUTHORIZATION':
-			console.error('You are not authorized to use i2b2. Please request an account.');
-		    	alert('You are not authorized to use i2b2. Please request an account.');
-		    	i2b2.PM.doLogout();
-		    	return false;
-		case 'EINTERNAL':
-			console.error('Internal server error.');
-		    	alert('An error occurred on the i2b2 server. Try reloading the page.');
-		    	return false;
-	}
-	try {
+i2b2.PM._processUserConfigSuccess = function (data) {
+    try {
 		var t_passwd = i2b2.h.XPath(data.refXML, '//user/password')[0]; //[@token_ms_timeout]
 		i2b2.PM.model.login_password = i2b2.h.Xml2String(t_passwd);
 		var t_username = i2b2.h.XPath(data.refXML, '//user/user_name/text()')[0];
 	        i2b2.PM.model.login_username = i2b2.h.Xml2String(t_username);
-	        
-		var timeout = t_passwd.getAttribute('token_ms_timeout');
-		if (timeout == undefined ||  timeout < 300001)
-		{
-		 i2b2.PM.model.IdleTimer.start(1800000-300000); //timeout); //timeout-60000);		
-
+	        var timeout = t_passwd.getAttribute('token_ms_timeout');
+	        if (timeout == undefined ||  timeout < 300001) {
+		    i2b2.PM.model.IdleTimer.start(1800000-300000); //timeout); //timeout-60000);		
 		} else {
 		    i2b2.PM.model.IdleTimer.start(timeout-300000); //timeout); //timeout-60000);		
 		}
@@ -294,106 +265,34 @@ i2b2.PM.doLogin = function() {
 }
 
 i2b2.PM._processUserConfigFailure = function () {
-    if (i2b2.PM.model.EC_SUPPORT_CONTACT) {
-	alert('You are not authorized to use i2b2. To request access, contact us at ' + i2b2.PM.model.EC_SUPPORT_CONTACT + '.');
-    } else {
-	alert('You are not authorized to use i2b2. Please request access.');
-    }
+    console.error('You are not authorized to use i2b2. Please request an account.');
+    alert('You are not authorized to use i2b2. Please request an account.');
     i2b2.PM.doLogout();
 }
 
-i2b2.PM._destroyEurekaClinicalSessions = function(callback) {
-    if (i2b2.PM.model.EC_I2B2_INTEGRATION_URL) {
-	new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/destroy-session', {
-	    method: 'get',
-	    onComplete: function (response) {
-		if (i2b2.PM.model.EC_USER_AGREEMENT_URL) {
-		    new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/destroy-session', {
-			method: 'get',
-			onComplete: function (response) {
-			    if (callback) {
-				callback();
-			    }
-			}
-		    });
-		} else if (callback) {
-		    callback();
-		}
-	    }
-	});
-    } else if (callback) {
-    	callback();
-    }
-}
-
-i2b2.PM.getEurekaClinicalSession = function(url, params) {
-    var theIframe = new Element('iframe', {src: url + '/protected/get-session'});
-    var timeout = null;
-    
-    function receiveMessage(event) {
-	theIframe = document.body.removeChild(theIframe);
-	window.removeEventListener('message', receiveMessage, false);
-	if (timeout) {
-	    clearTimeout(timeout);
-	}
-	var origin = event.origin || event.originalEvent.origin;
-	if (url.startsWith(origin)) {
-	    params.onSuccess({status: 200});
-	} else {
-	    params.onFailure({status: 401});
-	}
-    }
-    window.addEventListener('message', receiveMessage, false);
-
-    function onTimeout() {
-	window.removeEventListener('message', receiveMessage);
-	theIframe = document.body.removeChild(theIframe);
-	params.onFailure({status: 401});
-    }
-    
-    theIframe.style.display = 'none';
-    theIframe = document.body.appendChild(theIframe);
-    timeout = setTimeout(onTimeout, 1000 * 30);
-}
-
-i2b2.PM._checkUserAgreement = function(data, successCallback, skipRetry) {
-    if (i2b2.PM.model.EC_USER_AGREEMENT_URL) {
-	i2b2.PM.getEurekaClinicalSession(i2b2.PM.model.EC_USER_AGREEMENT_URL, {
-	    onSuccess: function (response) {
-		new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/proxy-resource/useragreementstatuses/me?status=ACTIVE', {
-		    method: 'get',
-		    contentType: 'application/json',
+i2b2.PM._checkUserAgreement = function(data, hasi2b2User) {
+    new Ajax.Request(i2b2.PM.EC_USER_AGREEMENT_URL + '/proxy-resource/useragreementstatuses/me', {
+	method: 'get',
+	contentType: 'application/json',
+	onSuccess: function (response) {
+	    if (hasi2b2User) {
+		i2b2.PM._processUserConfigSuccess(data);
+	    } else {
+		new Ajax.Request(i2b2.PM.EC_I2B2_INTEGRATION_URL + '/proxy-resource/i2b2users/auto', {
+		    method: 'post',
 		    onSuccess: function (response) {
-			if (!successCallback) {
-			    i2b2.PM._processUserConfigSuccess(data);
-			} else {
-			    successCallback();
-			}
+			window.location.reload();
 		    },
 		    onFailure: function (response) {
-			switch (response.status) {
-			case 404:
-			    window.location=i2b2.PM.model.EC_USER_AGREEMENT_URL + '/protected/present?service=' + window.location.href;
-			    break;
-			case 401:
-			    if (!skipRetry) {
-				i2b2.PM._destroyEurekaClinicalSessions(function() {
-				    i2b2.PM._checkUserAgreement(data, hasi2b2user, true);
-				});
-				break;
-			    }
-			default:
-			    alert('An error occurred on the i2b2 server. Try reloading the page.');
-			}
+			i2b2.PM._processUserConfigFailure();
 		    }
 		});
-	    },
-	    onFailure: function (response) {
-		i2b2.PM._processUserConfigFailure();
 	    }
-	})
-	
-    }
+	},
+	onFailure: function (response) {
+	    document.href=i2b2.PM.EC_USER_AGREEMENT_URL + '/protected/present?service=' + window.location.href;
+	}
+    });
 }
 
 i2b2.PM._processUserConfig = function (data) {
