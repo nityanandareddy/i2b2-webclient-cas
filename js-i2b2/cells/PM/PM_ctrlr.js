@@ -314,11 +314,11 @@ i2b2.PM._processUserConfig = function (data) {
 	} else {
 		t_error = null;
 	}
-        if (!t_error)
+        if (!t_error) {
 	    if (!i2b2.PM.model.EC_USER_AGREEMENT_URL) {
 		i2b2.PM._processUserConfigSuccess(data);
 	    } else {
-		i2b2.PM._checkUserAgreement(data);
+		i2b2.PM._checkUserAgreement(data, true);
 	    }
 	    return true;
 	}
@@ -334,10 +334,18 @@ i2b2.PM._processUserConfig = function (data) {
 				method: 'get',
 				contentType: 'application/json',
 				onSuccess: function (response) {
-				    if (!i2b2.PM.model.EC_USER_AGREEMENT_URL) {
-					window.location.reload();
+				    if (!i2b2.PM.model.EC_USER_AGREEMENT_REQUIRED) {
+					new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/proxy-resource/i2b2users/auto', {
+					    method: 'post',
+					    onSuccess: function (response) {
+						window.location.reload();
+					    },
+					    onFailure: function (response) {
+						i2b2.PM._processUserConfigFailure();
+					    }
+					});
 				    } else {
-					i2b2.PM._checkUserAgreement(data);
+					i2b2.PM._checkUserAgreement(data, false);
 				    }
 				},
 				onFailure: function (response) {
