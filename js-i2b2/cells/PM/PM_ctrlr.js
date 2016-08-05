@@ -96,51 +96,18 @@ i2b2.PM.doLogin = function() {
 
 
 // ================================================================================================== //
-i2b2.PM._processUserConfig = function (data) {
-	console.group("PROCESS Login XML");
-	console.debug(" === run the following command in Firebug to view message sniffer: i2b2.hive.MsgSniffer.show() ===");
 
-
-	if (!data.refXML) {
-                console.error("I2b2 web client got no XML response from the i2b2 server. Maybe the server is not up?");
-                alert("I2b2 web client got no response from the i2b2 server. Reload the page in your browser to try again.");
-                return false;
-        }
-
-	// save the valid data that was passed into the PM cell's data model
-	i2b2.PM.model.login_username = data.msgParams.sec_user;
-	var errors = i2b2.h.XPath(data.refXML, "//response_header/result_status/status[@type='ERROR']/text()");
-	var t_error;
-	if (errors && errors.length > 0) {
-		t_error = i2b2.h.Xml2String(errors[0]);
-	} else {
-		t_error = null;
-	}
-	switch (t_error) {
-		case 'EAUTHORIZATION':
-			console.error('You are not authorized to use i2b2. Please request an account.');
-		    	alert('You are not authorized to use i2b2. Please request an account.');
-		    	i2b2.PM.doLogout();
-		    	return false;
-		case 'EINTERNAL':
-			console.error('Internal server error.');
-		    	alert('An error occurred on the i2b2 server. Try reloading the page.');
-		    	return false;
-	}
-	try {
+i2b2.PM._processUserConfigSuccess = function (data) {
+    try {
 		var t_passwd = i2b2.h.XPath(data.refXML, '//user/password')[0]; //[@token_ms_timeout]
 		i2b2.PM.model.login_password = i2b2.h.Xml2String(t_passwd);
 		var t_username = i2b2.h.XPath(data.refXML, '//user/user_name/text()')[0];
 	        i2b2.PM.model.login_username = i2b2.h.Xml2String(t_username);
-	        
-		var timeout = t_passwd.getAttribute('token_ms_timeout');
-		if (timeout == undefined ||  timeout < 300001)
-		{
-		 i2b2.PM.model.IdleTimer.start(1800000-300000); //timeout); //timeout-60000);		
-			
+	        var timeout = t_passwd.getAttribute('token_ms_timeout');
+	        if (timeout == undefined ||  timeout < 300001) {
+		    i2b2.PM.model.IdleTimer.start(1800000-300000); //timeout); //timeout-60000);		
 		} else {
-		
-		 i2b2.PM.model.IdleTimer.start(timeout-300000); //timeout); //timeout-60000);		
+		    i2b2.PM.model.IdleTimer.start(timeout-300000); //timeout); //timeout-60000);		
 		}
 	} catch (e) {
 		//console.error("Could not find returned password node in login XML");
@@ -192,7 +159,7 @@ i2b2.PM._processUserConfig = function (data) {
 	i2b2.PM.model.shrine_domain = Boolean.parseTo(data.msgParams.is_shrine);
 	i2b2.PM.model.login_project = data.msgParams.sec_project;
 	i2b2.PM.model.loginXML = data.refXML; 
-	console.info("AJAX Login Successful! Updated: i2b2.PM.model");
+        console.info("AJAX Login Successful! Updated: i2b2.PM.model");
 
 	// hide the modal form if needed
 	try { i2b2.PM.view.modal.login.hide(); } catch(e) {}
@@ -295,6 +262,92 @@ i2b2.PM._processUserConfig = function (data) {
 		// display list of possible projects for the user to select
 		i2b2.PM.view.modal.projectDialog.showProjects();
 	}
+}
+
+i2b2.PM._processUserConfigFailure = function () {
+    console.error('You are not authorized to use i2b2. Please request an account.');
+    alert('You are not authorized to use i2b2. Please request an account.');
+    i2b2.PM.doLogout();
+}
+
+i2b2.PM._checkUserAgreement = function(data, hasi2b2User) {
+    new Ajax.Request(i2b2.PM.EC_USER_AGREEMENT_URL + '/proxy-resource/useragreementstatuses/me', {
+	method: 'get',
+	contentType: 'application/json',
+	onSuccess: function (response) {
+	    if (hasi2b2User) {
+		i2b2.PM._processUserConfigSuccess(data);
+	    } else {
+		new Ajax.Request(i2b2.PM.EC_I2B2_INTEGRATION_URL + '/proxy-resource/i2b2users/auto', {
+		    method: 'post',
+		    onSuccess: function (response) {
+			window.location.reload();
+		    },
+		    onFailure: function (response) {
+			i2b2.PM._processUserConfigFailure();
+		    }
+		});
+	    }
+	},
+	onFailure: function (response) {
+	    document.href=i2b2.PM.EC_USER_AGREEMENT_URL + '/protected/present?service=' + window.location.href;
+	}
+    });
+}
+
+i2b2.PM._processUserConfig = function (data) {
+	console.group("PROCESS Login XML");
+	console.debug(" === run the following command in Firebug to view message sniffer: i2b2.hive.MsgSniffer.show() ===");
+
+	if (!data.refXML) {
+                console.error("I2b2 web client got no XML response from the i2b2 server. Maybe the server is not up?");
+                alert("I2b2 web client got no response from the i2b2 server. Reload the page in your browser to try again.");
+                return false;
+        }
+
+	// save the valid data that was passed into the PM cell's data model
+	i2b2.PM.model.login_username = data.msgParams.sec_user;
+	var errors = i2b2.h.XPath(data.refXML, "//response_header/result_status/status[@type='ERROR']/text()");
+	var t_error;
+	if (errors && errors.length > 0) {
+		t_error = i2b2.h.Xml2String(errors[0]);
+	} else {
+		t_error = null;
+	} else {
+	    if (!i2b2.PM.EC_USER_AGREEMENT_URL) {
+		i2b2.PM._processUserConfigSuccess(data);
+	    } else {
+		i2b2.PM._checkUserAgreement(data);
+	    }
+	    return true;
+	}
+	switch (t_error) {
+	    case 'EAUTHORIZATION':
+	        if (!i2b2.PM.EC_I2B2_INTEGRATION_URL) {
+		    i2b2.PM._processUserConfigFailure();
+		} else {
+	            new Ajax.Request(i2b2.PM.EC_I2B2_INTEGRATION_URL + '/proxy-resource/users/auto', {
+			method: 'get',
+			contentType: 'application/json',
+			onSuccess: function (response) {
+			    if (!i2b2.PM.EC_USER_AGREEMENT_URL) {
+				window.location.reload();
+			    } else {
+				i2b2.PM._checkUserAgreement(data);
+		            }
+			},
+			onFailure: function (response) {
+			    i2b2.PM._processUserConfigFailure();
+			}
+		    });
+		}
+	        return false;
+	    default:
+		console.error('Internal server error.');
+		alert('An error occurred on the i2b2 server. Try reloading the page.');
+	        return false;
+	}
+	
 
 }
 
