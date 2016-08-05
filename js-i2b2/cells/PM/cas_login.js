@@ -80,6 +80,7 @@ i2b2.PM.doCASLogin = function() {
     
     i2b2.PM.model.CAS_server = domain.CAS_server;
     i2b2.PM.model.EC_I2B2_INTEGRATION_URL = domain.EC_I2B2_INTEGRATION_URL;
+    i2b2.PM.model.EC_USER_AGREEMENT_URL = domain.EC_USER_AGREEMENT_URL;
     i2b2.PM.model.url = domain.urlCellPM;
     i2b2.PM.model.allow_analysis = _flag(domain.allowAnalysis, true);
     i2b2.PM.model.login_debugging = _flag(domain.debug, true);
