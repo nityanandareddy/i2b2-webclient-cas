@@ -289,7 +289,7 @@ i2b2.PM._checkUserAgreement = function(data, hasi2b2User) {
 	    }
 	},
 	onFailure: function (response) {
-	    document.href=i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/proxy-resource/present?service=' + window.location.href;
+	    document.href=i2b2.PM.model.EC_USER_AGREEMENT_URL + '/protected/present?service=' + window.location.href;
 	}
     });
 }
