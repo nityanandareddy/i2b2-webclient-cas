@@ -294,8 +294,15 @@ i2b2.PM._processUserConfig = function (data) {
 	    if (!i2b2.PM.model.EC_USER_AGREEMENT_URL) {
 		i2b2.PM._processUserConfigSuccess(data);
 	    } else {
-		i2b2.PM._checkUserAgreement(data, true);
-	    }
+		new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/protected/login', {
+		    method: 'get',
+		    onSuccess: function (response) {
+			i2b2.PM._checkUserAgreement(data, true);   
+		    },
+		    onFailure: function (response) {
+			i2b2.PM._processUserConfigFailure();
+		    }
+		});
 	    return true;
 	}
 	switch (t_error) {
