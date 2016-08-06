@@ -269,7 +269,29 @@ i2b2.PM._processUserConfigFailure = function () {
     i2b2.PM.doLogout();
 }
 
-i2b2.PM._checkUserAgreement = function(data, hasi2b2User) {
+i2b2.PM._destroyEurekaClinicalSessions = function(callback) {
+    if (i2b2.PM.model.EC_I2B2_INTEGRATION_URL) {
+	new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/destroy-session', {
+	    method: 'post',
+	    onComplete: function (response) {
+		if (i2b2.PM.model.EC_USER_AGREEMENT_URL) {
+		    new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/destroy-session', {
+			method: 'post',
+			onComplete: function (response) {
+			    if (callback) {
+				callback();
+			    }
+			}
+		    });
+		} else if (callback) {
+		    callback();
+		}
+	    }
+	});
+    }
+}
+
+i2b2.PM._checkUserAgreement = function(data, hasi2b2User, skipRetry) {
     new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/proxy-resource/useragreementstatuses/me', {
 	method: 'get',
 	contentType: 'application/json',
@@ -289,7 +311,20 @@ i2b2.PM._checkUserAgreement = function(data, hasi2b2User) {
 	    }
 	},
 	onFailure: function (response) {
-	    document.href=i2b2.PM.model.EC_USER_AGREEMENT_URL + '/protected/present?service=' + window.location.href;
+	    switch (response.status) {
+	    case 404:
+		window.location=i2b2.PM.model.EC_USER_AGREEMENT_URL + '/protected/present?service=' + window.location.href;
+		break;
+	    case 401:
+		if (!skipRetry) {
+		    i2b2.PM._destroyEurekaClinicalSessions(function() {
+			i2b2.PM._checkUserAgreement(data, hasi2b2user, true);
+		    });
+		    break;
+		}
+	    default:
+		alert('An error occurred on the i2b2 server. Try reloading the page.');
+	    }
 	}
     });
 }
@@ -382,15 +417,16 @@ i2b2.PM._processUserConfig = function (data) {
 
 // ================================================================================================== //
 i2b2.PM.doLogout = function() {
-    if (undefined != i2b2.PM.model.CAS_server) {
-	eraseCookie("CAS_ticket");
-	eraseCookie("JSESSIONID");
-	window.location=i2b2.PM.model.CAS_server + "logout";
-    } else {
-	// bug fix - must reload page to avoid dirty data from lingering
-	window.location.reload();
-    }
-
+    i2b2.PM._destroyEurekaClinicalSessions(function() {
+	if (undefined != i2b2.PM.model.CAS_server) {
+	    eraseCookie("CAS_ticket");
+	    eraseCookie("JSESSIONID");
+	    window.location=i2b2.PM.model.CAS_server + "logout";
+	} else {
+	    // bug fix - must reload page to avoid dirty data from lingering
+	    window.location.reload();
+	}
+    });
 }
 
 
