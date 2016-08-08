@@ -273,11 +273,11 @@ i2b2.PM._processUserConfigFailure = function () {
 i2b2.PM._destroyEurekaClinicalSessions = function(callback) {
     if (i2b2.PM.model.EC_I2B2_INTEGRATION_URL) {
 	new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/destroy-session', {
-	    method: 'post',
+	    method: 'get',
 	    onComplete: function (response) {
 		if (i2b2.PM.model.EC_USER_AGREEMENT_URL) {
 		    new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/destroy-session', {
-			method: 'post',
+			method: 'get',
 			onComplete: function (response) {
 			    if (callback) {
 				callback();
@@ -419,9 +419,14 @@ i2b2.PM._processUserConfig = function (data) {
 i2b2.PM.doLogout = function() {
     i2b2.PM._destroyEurekaClinicalSessions(function() {
 	if (undefined != i2b2.PM.model.CAS_server) {
-	    eraseCookie("CAS_ticket");
 	    eraseCookie("JSESSIONID");
-	    window.location=i2b2.PM.model.CAS_server + "logout";
+	    if (i2b2.PM.model.CAS_LOGOUT_TYPE === 'CAS') {
+		eraseCookie("CAS_ticket");
+		window.location=i2b2.PM.model.CAS_server + "logout";
+	    }
+	}
+	if (i2b2.PM.model.EC_LOGOUT_LANDING_PAGE_URL) {
+	    window.location=i2b2.PM.model.EC_LOGOUT_LANDING_PAGE_URL;
 	} else {
 	    // bug fix - must reload page to avoid dirty data from lingering
 	    window.location.reload();
