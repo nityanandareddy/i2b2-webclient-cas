@@ -425,6 +425,7 @@ i2b2.PM.doLogout = function() {
 	    if (i2b2.PM.model.CAS_LOGOUT_TYPE === 'CAS') {
 		eraseCookie("CAS_ticket");
 		window.location=i2b2.PM.model.CAS_server + "logout";
+                return;
 	    }
 	}
 	if (i2b2.PM.model.EC_LOGOUT_LANDING_PAGE_URL) {
