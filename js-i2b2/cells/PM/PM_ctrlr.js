@@ -288,6 +288,8 @@ i2b2.PM._destroyEurekaClinicalSessions = function(callback) {
 		}
 	    }
 	});
+    } else if (callback) {
+    	callback();
     }
 }
 
