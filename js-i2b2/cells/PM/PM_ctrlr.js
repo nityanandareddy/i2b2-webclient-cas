@@ -271,7 +271,7 @@ i2b2.PM._destroyEurekaClinicalSessions = function(callback) {
 }
 
 i2b2.PM._checkUserAgreement = function(data, hasi2b2User, skipRetry) {
-    new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/proxy-resource/useragreementstatuses/me', {
+    new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/proxy-resource/useragreementstatuses/me', {
 	method: 'get',
 	contentType: 'application/json',
 	onSuccess: function (response) {
