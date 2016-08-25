@@ -270,42 +270,45 @@ i2b2.PM._destroyEurekaClinicalSessions = function(callback) {
     }
 }
 
-i2b2.PM._checkUserAgreement = function(data, hasi2b2User, skipRetry) {
-    new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/proxy-resource/useragreementstatuses/me', {
-	method: 'get',
-	contentType: 'application/json',
-	onSuccess: function (response) {
-	    if (hasi2b2User) {
-		i2b2.PM._processUserConfigSuccess(data);
-	    } else {
-		new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/proxy-resource/i2b2users/auto', {
-		    method: 'post',
+i2b2.PM._checkUserAgreement = function(data, successCallback, skipRetry) {
+    if (!i2b2.PM.model.EC_USER_AGREEMENT_URL) {
+	new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/protected/login', {
+	    method: 'get',
+	    onSuccess: function (response) {
+		new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/proxy-resource/useragreementstatuses/me', {
+		    method: 'get',
+		    contentType: 'application/json',
 		    onSuccess: function (response) {
-			window.location.reload();
+			if (!successCallback) {
+			    i2b2.PM._processUserConfigSuccess(data);
+			} else {
+			    successCallback();
+			}
 		    },
 		    onFailure: function (response) {
-			i2b2.PM._processUserConfigFailure();
+			switch (response.status) {
+			case 404:
+			    window.location=i2b2.PM.model.EC_USER_AGREEMENT_URL + '/protected/present?service=' + window.location.href;
+			    break;
+			case 401:
+			    if (!skipRetry) {
+				i2b2.PM._destroyEurekaClinicalSessions(function() {
+				    i2b2.PM._checkUserAgreement(data, hasi2b2user, true);
+				});
+				break;
+			    }
+			default:
+			    alert('An error occurred on the i2b2 server. Try reloading the page.');
+			}
 		    }
 		});
+	    },
+	    onFailure: function (response) {
+		i2b2.PM._processUserConfigFailure();
 	    }
-	},
-	onFailure: function (response) {
-	    switch (response.status) {
-	    case 404:
-		window.location=i2b2.PM.model.EC_USER_AGREEMENT_URL + '/protected/present?service=' + window.location.href;
-		break;
-	    case 401:
-		if (!skipRetry) {
-		    i2b2.PM._destroyEurekaClinicalSessions(function() {
-			i2b2.PM._checkUserAgreement(data, hasi2b2user, true);
-		    });
-		    break;
-		}
-	    default:
-		alert('An error occurred on the i2b2 server. Try reloading the page.');
-	    }
-	}
-    });
+	})
+	
+    }
 }
 
 i2b2.PM._processUserConfig = function (data) {
@@ -331,16 +334,7 @@ i2b2.PM._processUserConfig = function (data) {
 	    if (!i2b2.PM.model.EC_USER_AGREEMENT_URL) {
 		i2b2.PM._processUserConfigSuccess(data);
 	    } else {
-		new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/protected/login', {
-		    method: 'get',
-		    onSuccess: function (response) {
-			i2b2.PM._checkUserAgreement(data, true);   
-		    },
-		    onFailure: function (response) {
-			i2b2.PM._processUserConfigFailure();
-		    }
-		});
-		return true;
+		i2b2.PM._checkUserAgreement(data);   
 	    }
 	}
 	switch (t_error) {
@@ -366,7 +360,17 @@ i2b2.PM._processUserConfig = function (data) {
 					    }
 					});
 				    } else {
-					i2b2.PM._checkUserAgreement(data, false);
+					i2b2.PM._checkUserAgreement(data, function () {
+					    new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/proxy-resource/i2b2users/auto', {
+						method: 'post',
+						onSuccess: function (response) {
+						    window.location.reload();
+						},
+						onFailure: function (response) {
+						    i2b2.PM._processUserConfigFailure();
+						}
+					    });
+					});
 				    }
 				},
 				onFailure: function (response) {
