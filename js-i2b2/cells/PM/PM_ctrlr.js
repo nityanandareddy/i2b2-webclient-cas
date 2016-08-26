@@ -294,10 +294,35 @@ i2b2.PM._destroyEurekaClinicalSessions = function(callback) {
     }
 }
 
+i2b2.PM._getECSession = function(url, params) {
+    var timeout = null;
+    
+    function receiveMessage(event) {
+	var origin = event.origin || event.originalEvent.origin;
+	if (origin === url) {
+	    if (timeout) {
+		clearTimeout(timeout);
+	    }
+	    params.onSuccess({status: 200});
+	}
+    }
+    window.addEventListener('message', receiveMessage);
+
+    function onTimeout() {
+	window.removeEventListener('message', receiveMessage);
+	params.onFailure({status: 401});
+    }
+
+    var theIframe = document.createElement('<iframe src="' + url + '/protected/get-session"></iframe>');
+    theIframe.style.display = 'none';
+    document.body.appendChild(theIframe);
+    
+    timeout = setTimeout(onTimeout, 1000 * 30);
+}
+
 i2b2.PM._checkUserAgreement = function(data, successCallback, skipRetry) {
     if (!i2b2.PM.model.EC_USER_AGREEMENT_URL) {
-	new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/protected/login', {
-	    method: 'get',
+	i2b2.PM._getECSession(i2b2.PM.model.EC_USER_AGREEMENT_URL, {
 	    onSuccess: function (response) {
 		new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/proxy-resource/useragreementstatuses/me', {
 		    method: 'get',
