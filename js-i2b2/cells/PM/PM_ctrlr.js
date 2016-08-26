@@ -304,7 +304,7 @@ i2b2.PM._checkUserAgreement = function(data, successCallback, skipRetry) {
     if (i2b2.PM.model.EC_USER_AGREEMENT_URL) {
 	i2b2.PM.getEurekaClinicalSession(i2b2.PM.model.EC_USER_AGREEMENT_URL, {
 	    onSuccess: function (response) {
-		new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/proxy-resource/useragreementstatuses/me', {
+		new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/proxy-resource/useragreementstatuses/me?status=ACTIVE', {
 		    method: 'get',
 		    contentType: 'application/json',
 		    onSuccess: function (response) {
