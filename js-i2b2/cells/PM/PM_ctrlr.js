@@ -294,26 +294,28 @@ i2b2.PM._destroyEurekaClinicalSessions = function(callback) {
     }
 }
 
-i2b2.PM._getECSession = function(url, params) {
+i2b2.PM.getEurekaClinicalSession = function(url, params) {
     var timeout = null;
     
     function receiveMessage(event) {
 	var origin = event.origin || event.originalEvent.origin;
-	if (origin === url) {
+	if (url.startsWith(origin)) {
 	    if (timeout) {
 		clearTimeout(timeout);
 	    }
 	    params.onSuccess({status: 200});
+	} else {
+	    params.onFailure({status: 401});
 	}
     }
-    window.addEventListener('message', receiveMessage);
+    window.addEventListener('message', receiveMessage, false);
 
     function onTimeout() {
 	window.removeEventListener('message', receiveMessage);
 	params.onFailure({status: 401});
     }
 
-    var theIframe = document.createElement('<iframe src="' + url + '/protected/get-session"></iframe>');
+    var theIframe = new Element('iframe', {src: url + '/protected/get-session'});
     theIframe.style.display = 'none';
     document.body.appendChild(theIframe);
     
@@ -321,8 +323,8 @@ i2b2.PM._getECSession = function(url, params) {
 }
 
 i2b2.PM._checkUserAgreement = function(data, successCallback, skipRetry) {
-    if (!i2b2.PM.model.EC_USER_AGREEMENT_URL) {
-	i2b2.PM._getECSession(i2b2.PM.model.EC_USER_AGREEMENT_URL, {
+    if (i2b2.PM.model.EC_USER_AGREEMENT_URL) {
+	i2b2.PM.getEurekaClinicalSession(i2b2.PM.model.EC_USER_AGREEMENT_URL, {
 	    onSuccess: function (response) {
 		new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/proxy-resource/useragreementstatuses/me', {
 		    method: 'get',
@@ -381,17 +383,18 @@ i2b2.PM._processUserConfig = function (data) {
 	}
         if (!t_error) {
 	    if (!i2b2.PM.model.EC_USER_AGREEMENT_URL) {
+		alert("here");
 		i2b2.PM._processUserConfigSuccess(data);
 	    } else {
 		i2b2.PM._checkUserAgreement(data);   
 	    }
-	}
+	} else {
 	switch (t_error) {
 	    case 'EAUTHORIZATION':
 	        if (!i2b2.PM.model.EC_I2B2_INTEGRATION_URL) {
 		    i2b2.PM._processUserConfigFailure();
 		} else {
-		    i2b2.PM._getECSession(i2b2.PM.model.EC_I2B2_INTEGRATION_URL, {
+		    i2b2.PM.getEurekaClinicalSession(i2b2.PM.model.EC_I2B2_INTEGRATION_URL, {
 			onSuccess: function (response) {
 			    new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/proxy-resource/users/auto', {
 				method: 'get',
@@ -437,8 +440,9 @@ i2b2.PM._processUserConfig = function (data) {
 		console.error('Internal server error.');
 		alert('An error occurred on the i2b2 server. Try reloading the page.');
 	        return false;
-	    default:
+            default:
                 i2b2.PM._processUserConfigSuccess(data);
+	}
 	}
 	
 
