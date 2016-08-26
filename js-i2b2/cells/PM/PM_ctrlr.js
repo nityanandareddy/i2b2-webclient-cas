@@ -295,14 +295,17 @@ i2b2.PM._destroyEurekaClinicalSessions = function(callback) {
 }
 
 i2b2.PM.getEurekaClinicalSession = function(url, params) {
+    var theIframe = new Element('iframe', {src: url + '/protected/get-session'});
     var timeout = null;
     
     function receiveMessage(event) {
+	theIframe = document.body.removeChild(theIframe);
+	window.removeEventListener('message', receiveMessage, false);
+	if (timeout) {
+	    clearTimeout(timeout);
+	}
 	var origin = event.origin || event.originalEvent.origin;
 	if (url.startsWith(origin)) {
-	    if (timeout) {
-		clearTimeout(timeout);
-	    }
 	    params.onSuccess({status: 200});
 	} else {
 	    params.onFailure({status: 401});
@@ -312,13 +315,12 @@ i2b2.PM.getEurekaClinicalSession = function(url, params) {
 
     function onTimeout() {
 	window.removeEventListener('message', receiveMessage);
+	theIframe = document.body.removeChild(theIframe);
 	params.onFailure({status: 401});
     }
-
-    var theIframe = new Element('iframe', {src: url + '/protected/get-session'});
-    theIframe.style.display = 'none';
-    document.body.appendChild(theIframe);
     
+    theIframe.style.display = 'none';
+    theIframe = document.body.appendChild(theIframe);
     timeout = setTimeout(onTimeout, 1000 * 30);
 }
 
