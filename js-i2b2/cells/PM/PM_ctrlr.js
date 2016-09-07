@@ -385,7 +385,6 @@ i2b2.PM._processUserConfig = function (data) {
 	}
         if (!t_error) {
 	    if (!i2b2.PM.model.EC_USER_AGREEMENT_URL) {
-		alert("here");
 		i2b2.PM._processUserConfigSuccess(data);
 	    } else {
 		i2b2.PM._checkUserAgreement(data);   
