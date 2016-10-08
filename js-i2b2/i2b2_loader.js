@@ -58,38 +58,14 @@ i2b2.hive.tempCellsList = [
 		   forceConfigMsg: { params: [] },
 		   roles: [ "DATA_LDS", "DATA_DEID", "DATA_PROT" ],
 		   forceDir: "cells/plugins/standard"
-		},
-		{ code:	"WISEsearcher",
-		   forceLoading: true,
-		   forceConfigMsg: { params: [] },
-		   roles: [ "DATA_OBFSC", "DATA_LDS", "DATA_DEID", "DATA_PROT" ],
-		   forceDir: "cells/plugins/community"
-		},
-		{ code:	"CAREcncptDem",
-		   forceLoading: true,
-		   forceConfigMsg: { params: [] },
-		   roles: [ "DATA_LDS", "DATA_DEID", "DATA_PROT" ],
-		   forceDir: "cells/plugins/community"
-		},
-		{ code:	"CAREobsTally",
-		   forceLoading: true,
-		   forceConfigMsg: { params: [] },
-		   roles: [ "DATA_LDS", "DATA_DEID", "DATA_PROT" ],
-		   forceDir: "cells/plugins/community"
-		},
-		{ code:	"ExportXLS",
-		   forceLoading: true,
-		   forceConfigMsg: { params: [] },
-		   roles: [ "DATA_LDS", "DATA_DEID", "DATA_PROT" ],
-		   forceDir: "cells/plugins/community"
-		},
-		{ code:	"ExampComm",
-		   forceLoading: true,
-		   forceConfigMsg: { params: [] },
-		   roles: [ "DATA_OBFSC", "DATA_AGG", "DATA_LDS", "DATA_DEID", "DATA_PROT" ],
-		   forceDir: "cells/plugins/examples"
-		}
 
+		}//,
+        // { code: "ProjectRequest",
+        //     forceLoading: true,
+        //     forceConfigMsg: { params: [] },
+	// 	   roles: [ "DATA_LDS", "DATA_DEID", "DATA_PROT" ],
+        //     forceDir: "cells/plugins/standard"
+        // }
 		
 	];
 // ================================================================================================== //
