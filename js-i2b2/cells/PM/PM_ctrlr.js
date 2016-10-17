@@ -265,8 +265,11 @@ i2b2.PM._processUserConfigSuccess = function (data) {
 }
 
 i2b2.PM._processUserConfigFailure = function () {
-    console.error('You are not authorized to use i2b2. Please request an account.');
-    alert('You are not authorized to use i2b2. Please request an account.');
+    if (i2b2.PM.model.EC_SUPPORT_CONTACT) {
+	alert('You are not authorized to use i2b2. To request access, contact us at ' + i2b2.PM.model.EC_SUPPORT_CONTACT + '.');
+    } else {
+	alert('You are not authorized to use i2b2. Please request access.');
+    }
     i2b2.PM.doLogout();
 }
 
