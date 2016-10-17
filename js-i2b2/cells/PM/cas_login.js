@@ -82,6 +82,7 @@ i2b2.PM.doCASLogin = function() {
     i2b2.PM.model.EC_USER_AGREEMENT_URL = domain.EC_USER_AGREEMENT_URL;
     i2b2.PM.model.CAS_LOGOUT_TYPE = domain.CAS_LOGOUT_TYPE;
     i2b2.PM.model.EC_LOGOUT_LANDING_PAGE_URL = domain.EC_LOGOUT_LANDING_PAGE_URL;
+    i2b2.PM.model.EC_SUPPORT_CONTACT = domain.EC_SUPPORT_CONTACT;
     i2b2.PM.model.url = domain.urlCellPM;
     i2b2.PM.model.allow_analysis = _flag(domain.allowAnalysis, true);
     i2b2.PM.model.login_debugging = _flag(domain.debug, true);
