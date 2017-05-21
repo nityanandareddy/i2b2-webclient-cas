@@ -12,7 +12,16 @@ We expect any full implementation of version 2 of the CAS protocol to work. In p
 * [Eureka! Clinical CAS](https://github.com/eurekaclinical/cas), which is a patched version of [JASIG CAS version 3.5.2](https://wiki.jasig.org/display/CASUM/Home)
 * [Shibboleth Identity Provider version 3](https://wiki.shibboleth.net/confluence/display/IDP30/Home) with CAS emulation turned on
 
+## Requirements
+See the [i2b2 Web Client Install guide](http://community.i2b2.org/wiki/display/getstarted/Chapter+7.+i2b2+Web+Client+Install) for requirements.
+
 ## Installation
+1) Install our patched i2b2 project management cell, [i2b2-pm-cas](https://github.com/eurekaclinical/i2b2-pm-cas).
+2) Install [eurekaclinical-i2b2-integration-service](https://github.com/eurekaclinical/eurekaclinical-i2b2-integration-service).
+3) Install [eurekaclinical-i2b2-integration-webapp](https://github.com/eurekaclinical/eurekaclinical-i2b2-integration-webapp) on the same host as the i2b2 web client.
+4) Install [eurekaclinical-user-agreement-service](https://github.com/eurekaclinical/eurekaclinical-user-agreement-service).
+5) Install [eurekaclinical-user-agreement-webapp](https://github.com/eurekaclinical/eurekaclinical-user-agreement-webapp) on the same host as the i2b2 web client.
+
 Basically, just drop the installation in your web server's hosting folder. There is required configuration, described below.
 
 ## Configuration
