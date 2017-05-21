@@ -1,6 +1,6 @@
 # i2b2-webclient-cas
 This is a stock i2b2 1.7.05 web client patched with support for 
-* delegating authentication to Eureka via its patched [JASIG CAS](http://jasig.github.io/cas/4.1.x/index.html) server module, found at https://github.com/eurekaclinical/cas
+* delegating authentication to [Eureka! Clinical CAS](https://github.com/eurekaclinical/cas)
 * automated i2b2 account creation using the [Eureka! Clinical i2b2 Integration microservice](https://github.com/eurekaclinical/eurekaclinical-i2b2-integration-service)
 * requiring users to sign an electronic data use agreement using [Eureka! Clinical User Agreement microservice](https://github.com/eurekaclinical/eurekaclinical-user-agreement-service)
 
