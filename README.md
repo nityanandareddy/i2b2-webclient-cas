@@ -9,7 +9,7 @@ The CAS-related code is adapted from similar code for an older version of i2b2 b
 
 ## Version history
 ### Version 1.1
-Commented out the Project Request plugin.
+Commented out the Project Request plugin in the plugin registry list.
 
 ### Version 1.0.1
 Removed an `alert` call that was there for debugging.
