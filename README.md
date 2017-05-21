@@ -43,9 +43,6 @@ Open the `i2b2_config_data.js` file, and add the following properties to your do
 * `EC_USER_AGREEMENT_URL`: optional URL for your eurekaclinical-user-agreement-webapp, if you want users to be redirected to it.
 * `EC_SUPPORT_CONTACT`: optional email address to display when an error has occurred.
 
-### The i2b2 PM user tables
-When using these patches, the i2b2 project management module's user data table becomes an authorization table. The code authenticates the user with Eureka! CAS, and then it checks the user data table for the existence of the user's account before authorizing the user. Any passwords in the user data table are ignored. When authorizing users, we strongly recommend that you populate the password field with a random password.
-
 ## Licensing
 This code is released under the i2b2 Software License version 2.1, available at https://www.i2b2.org/software/i2b2_license.html.
 
