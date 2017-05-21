@@ -13,7 +13,13 @@ We expect any full implementation of version 2 of the CAS protocol to work. In p
 * [Shibboleth Identity Provider version 3](https://wiki.shibboleth.net/confluence/display/IDP30/Home) with CAS emulation turned on
 
 ## Requirements
-See the [i2b2 Web Client Install guide](http://community.i2b2.org/wiki/display/getstarted/Chapter+7.+i2b2+Web+Client+Install) for requirements.
+See the [i2b2 Web Client Install guide](http://community.i2b2.org/wiki/display/getstarted/Chapter+7.+i2b2+Web+Client+Install) for requirements for the web client itself. The Eureka! Clinical components require:
+* [Oracle Java JRE 8](http://www.oracle.com/technetwork/java/javase/overview/index.html)
+* [Tomcat 7](https://tomcat.apache.org)
+* One of the following relational databases:
+  * [Oracle](https://www.oracle.com/database/index.html) 11g or greater
+  * [PostgreSQL](https://www.postgresql.org) 9.1 or greater
+  * [H2](http://h2database.com) 1.4.193 or greater (for testing)
 
 ## Installation
 1) Install our patched i2b2 project management cell, [i2b2-pm-cas](https://github.com/eurekaclinical/i2b2-pm-cas).
