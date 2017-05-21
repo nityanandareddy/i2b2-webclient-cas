@@ -1,13 +1,15 @@
 # i2b2-webclient-cas
 This is a stock i2b2 1.7.05 web client patched with support for 
-* delegating authentication to [Eureka! Clinical CAS](https://github.com/eurekaclinical/cas)
+* delegating authentication to [Eureka! Clinical CAS](https://github.com/eurekaclinical/cas) or other CAS server that supports version 2 of the CAS protocol
 * automated i2b2 account creation using the [Eureka! Clinical i2b2 Integration microservice](https://github.com/eurekaclinical/eurekaclinical-i2b2-integration-service)
 * requiring users to sign an electronic data use agreement using [Eureka! Clinical User Agreement microservice](https://github.com/eurekaclinical/eurekaclinical-user-agreement-service)
 
 The CAS-related code is adapted from similar code for an older version of i2b2 by Dan Connolly found at https://bitbucket.org/DanC/i2b2-webclient-cas.
 
-## Versions of CAS Supported
-Eureka! currently uses a patched copy of CAS version 3.5.2. While these i2b2 patches have only been tested with Eureka!'s patched CAS, they likely also will work with stock CAS 3.5.2.
+## CAS implementations supported
+We expect any full CAS implementation with support for proxying to work. The following implementations of CAS are known to work:
+* [Eureka! Clinical CAS](https://github.com/eurekaclinical/cas), which is a patched version of JASIG CAS version 3.5.2
+* [Shibboleth Identity Provider version 3 with CAS emulation turned on](https://wiki.shibboleth.net/confluence/display/IDP30/Home)
 
 ## Installation
 Coming soon...
