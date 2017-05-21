@@ -31,6 +31,9 @@ See the [i2b2 Web Client Install guide](http://community.i2b2.org/wiki/display/g
 
 ## Configuration
 
+### Configuring the web client
+First, follow the configuration instructions for the web client and proxy in the [i2b2 Web Client Install guide](http://community.i2b2.org/wiki/display/getstarted/Chapter+7.+i2b2+Web+Client+Install).
+
 ### Pointing the webclient to your CAS server
 Open the `i2b2_config_data.js` file, and add the following properties to your domain settings:
 * `CAS_server`: the URL for your CAS server.
