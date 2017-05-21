@@ -10,7 +10,7 @@ The CAS-related code is adapted from similar code for an older version of i2b2 b
 ## CAS implementations supported
 We expect any full CAS implementation with support for proxying to work. The following implementations of CAS are known to work:
 * [Eureka! Clinical CAS](https://github.com/eurekaclinical/cas), which is a patched version of JASIG CAS version 3.5.2
-* [Shibboleth Identity Provider version 3 with CAS emulation turned on](https://wiki.shibboleth.net/confluence/display/IDP30/Home)
+* [Shibboleth Identity Provider version 3](https://wiki.shibboleth.net/confluence/display/IDP30/Home) with CAS emulation turned on
 
 ## Installation
 Coming soon...
