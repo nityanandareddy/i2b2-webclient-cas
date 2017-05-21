@@ -39,7 +39,7 @@ See the [i2b2 Web Client Install guide](http://community.i2b2.org/wiki/display/g
 3) Install [eurekaclinical-i2b2-integration-webapp](https://github.com/eurekaclinical/eurekaclinical-i2b2-integration-webapp) on the same host as the i2b2 web client.
 4) Install [eurekaclinical-user-agreement-service](https://github.com/eurekaclinical/eurekaclinical-user-agreement-service).
 5) Install [eurekaclinical-user-agreement-webapp](https://github.com/eurekaclinical/eurekaclinical-user-agreement-webapp) on the same host as the i2b2 web client.
-6) Follow the [i2b2 Web Client Install guide](http://community.i2b2.org/wiki/display/getstarted/Chapter+7.+i2b2+Web+Client+Install) for installing the web client itself.
+6) Follow the [i2b2 Web Client Install guide](http://community.i2b2.org/wiki/display/getstarted/Chapter+7.+i2b2+Web+Client+Install) for installing the web client itself. The steps for installing our patched web client are identical.
 
 ## Configuration
 
