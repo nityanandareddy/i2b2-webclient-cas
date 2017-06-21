@@ -195,7 +195,7 @@ i2b2.WORK.view.main.showOptions = function(){ alert('show options for Workplace'
 i2b2.WORK.view.main._generateTvNode = function(title, nodeData, parentNode){
     var funcAddWrkNode = function(renderInfo){
         var id = "WRK_TV-" + i2b2.GUID();
-        var retHtml = '<DIV id="' + id + '" style="white-space:nowrap;cursor:pointer;">';
+        var retHtml = '<DIV id="' + id + '" style="white-space:nowrap;cursor:pointer;" title="' + nodeData.annotation + '">';
         retHtml += '<DIV class= "' + renderInfo.cssClass + '" >';
         retHtml += '<IMG src="' + renderInfo.icon + '"/> ' + title;
         retHtml += '</DIV></DIV>';
@@ -350,7 +350,8 @@ i2b2.WORK.view.main._generateTvNode = function(title, nodeData, parentNode){
             try {
                 var sdxDataNode = i2b2.sdx.Master.EncapsulateData('WRK', o);
                 var sdxRenderData = i2b2.sdx.Master.RenderHTML(parentNode.tree.id, sdxDataNode, {
-                    'title': title
+                    'title': title,
+					'tooltip': 	nodeData.annotation.replace("\n","\nAnnotation: ") // PARTIAL BUG-FIX: WEBCLIENT-98
                 });
 				if (!sdxRenderData) { break; }
                 var renderObj = i2b2.sdx.Master.AppendTreeNode(parentNode.tree, parentNode, sdxRenderData);
@@ -603,12 +604,13 @@ i2b2.WORK.view.main.refreshTree = function() {
 		}
     }
     // -------------------------------------------------------
+	/*
     i2b2.WORK.view.main.ContextMenu = new YAHOO.widget.ContextMenu("divContextMenu-Workplace", {
 		zIndex: 5000,
         lazyload: true,
         trigger: $('wrkTreeview'),
         itemdata: []
-    });
+    });*/
 	
     i2b2.WORK.view.main.ContextMenu.subscribe("triggerContextMenu", i2b2.WORK.view.main.ContextMenuPreprocess);
     i2b2.WORK.view.main.ContextMenu.subscribe("beforeShow", i2b2.WORK.view.main.ContextMenuPreprocess);

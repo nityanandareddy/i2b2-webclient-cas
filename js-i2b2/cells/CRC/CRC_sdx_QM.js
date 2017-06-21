@@ -92,7 +92,8 @@ i2b2.sdx.TypeControllers.QM.RenderHTML= function(sdxData, options, targetDiv) {
 	if (options.dblclick) {sMainEvents += ' ondblclick="'+ options.dblclick +'" '; }
 	if (options.context) {sMainEvents += ' oncontext="'+ options.context +'" '; } else {retHtml += ' oncontextmenu="return false" '; }
 	// **** Render the HTML ***
-	var retHtml = '<DIV id="' + id + '" ' + sMainEvents + ' style="white-space:nowrap;cursor:pointer;">';
+	var retHtml = '<DIV id="' + id + '" ' + sMainEvents + ' style="white-space:nowrap;cursor:pointer;" >';
+	if (options.tooltip) { var retHtml = '<DIV id="' + id + '" ' + sMainEvents + ' style="white-space:nowrap;cursor:pointer;" title="' + options.tooltip + '">'; }
 	retHtml += '<DIV ';
 	if (Object.isString(options.cssClass)) {
 		retHtml += ' class="'+options.cssClass+'" ';
@@ -231,9 +232,10 @@ i2b2.sdx.TypeControllers.QM.getChildRecords = function(sdxParentNode, onComplete
 			o.end_date = i2b2.h.getXNodeVal(qi[i1],'end_date');
 			o.query_status_type = i2b2.h.getXNodeVal(qi[i1],'query_status_type');
 			o.title = "Results of " + pn.origData.name;
-			if (i2b2.h.getXNodeVal(qi[i1],'description') != "COMPLETED")
-			{
+			if(typeof o.batch_mode === "undefined"){ // CRC is below version 1.7.07
 				o.title += " - " + i2b2.h.getXNodeVal(qi[i1],'description');
+			} else { // CRC is version 1.7.08 or newer
+				o.title += " - " + o.batch_mode;
 			}
 			var sdxDataNode = i2b2.sdx.Master.EncapsulateData('QI',o);
 			// append to the QI record onto the QM in CRC data model
