@@ -15,6 +15,7 @@ console.time('execute time');
 // ================================================================================================== //
 i2b2.PM.doLogin = function() {
 	i2b2.PM.model.shrine_domain = false;
+	var input_errors = false;
 	// change the cursor
 	// show on GUI that work is being done
 	i2b2.h.LoadingMask.show();
@@ -26,12 +27,14 @@ i2b2.PM.doLogin = function() {
 		var login_username = val;
 	} else {
 		e += "\n  Username is empty";
+		input_errors = true;
 	}
 	var val = i2b2.PM.udlogin.inputPass.value;
 	if (!val.blank()) {
 		var login_password = val;
 	} else {
 		e += "\n  Password is empty";
+		input_errors = true;
 	}
 	var p = i2b2.PM.udlogin.inputDomain;
 	var val = p.options[p.selectedIndex].value;
@@ -59,6 +62,9 @@ i2b2.PM.doLogin = function() {
 			} else {
 				i2b2.PM.model.admin_only = false;
 			}
+			if (typeof p[val].installer !== undefined) {
+				i2b2.PM.model.installer_path = p[val].installer;
+			} 
 			
 		}
 	} else {
@@ -80,7 +86,11 @@ i2b2.PM.doLogin = function() {
 		domain: login_domain,
 		project: login_project
 	};
-	i2b2.PM.ajax.getUserAuth("PM:Login", parameters, callback, transportOptions);
+	if(!input_errors){
+		i2b2.PM.ajax.getUserAuth("PM:Login", parameters, callback, transportOptions);
+	} else {
+		alert(e);
+	}
 
 }
 
@@ -123,7 +133,7 @@ i2b2.PM._processUserConfigSuccess = function (data) {
 		
 		return;
 	}	
-	
+		i2b2.PM.model.otherAuthMethod = false;
 		i2b2.PM.model.isAdmin = false;
 	try { 
 		var t = i2b2.h.XPath(data.refXML, '//user/full_name')[0];
@@ -135,6 +145,15 @@ i2b2.PM._processUserConfigSuccess = function (data) {
 			i2b2.PM.model.isAdmin = true;
 		}		
 	} catch(e) {}		
+	try { // BUG FIX: WEBCLIENT-130
+		var t = i2b2.h.XPath(data.refXML, '//user/param[@name="authentication_method"]')[0];
+		if((i2b2.h.getXNodeVal(t, 'param').toUpperCase() == "NTLM") || (t != undefined)){
+			i2b2.PM.model.otherAuthMethod = true;
+		}
+	} catch(e) {}
+	
+	
+	
 	i2b2.PM.model.login_domain = data.msgParams.sec_domain;
 	i2b2.PM.model.shrine_domain = Boolean.parseTo(data.msgParams.is_shrine);
 	i2b2.PM.model.login_project = data.msgParams.sec_project;
@@ -180,7 +199,11 @@ i2b2.PM._processUserConfigSuccess = function (data) {
 			if (projdetails[d].textContent) {
 				i2b2.PM.model.projects[code].details[paramName] = projdetails[d].textContent;
 			} else if (projdetails[d].firstChild) {
-				i2b2.PM.model.projects[code].details[paramName] = projdetails[d].firstChild.nodeValue.unescapeHTML();				
+				// BUG FIX - WEBCLIENT-118
+				if(((browserIsIE8 && ieInCompatibilityMode) || browserIsIE11) && paramName=="announcement")
+					i2b2.PM.model.projects[code].details[paramName] = projdetails[d].firstChild.nodeValue;                                      
+				else
+					i2b2.PM.model.projects[code].details[paramName] = projdetails[d].firstChild.nodeValue.unescapeHTML();                  
 			}
 		}
 	}
@@ -654,8 +677,8 @@ i2b2.PM.view.modal.announcementDialog = {
 		
 		// display the announcement text
 		$('PM-announcement-title').innerHTML = i2b2.PM.model.login_project + " Announcements";
-		$('PM-announcement-body').innerHTML = msg;
-		// show the form
+		$('PM-announcement-body').innerHTML =  msg.replace(/&lt;/g, '<', 'gm').replace(/&gt;/g, '>');
+			// show the form
 		$('PM-announcement-panel').show();
 		thisRef.yuiDialog.show();
 		thisRef.yuiDialog.center();
@@ -748,10 +771,10 @@ i2b2.PM._processLaunchFramework = function() {
 				// load the rest of the info provided by the server
 				var  y = i2b2.h.XPath(oXML, "//cell_data[@id='"+cellKey+"']");
 				
+				//First find the Cells that in the proejct selected.
 				for (var i=y.length; i>=0; i--)
-				{
-					
-						var  x = i2b2.h.XPath(oXML, "//cell_data[@id='"+cellKey+"']")[i-1];
+				{					
+					var  x = i2b2.h.XPath(oXML, "//cell_data[@id='"+cellKey+"']")[i-1];
 				
 					if ( i2b2.h.getXNodeVal(x, "project_path") == i2b2.PM.model.projects[i2b2.PM.model.login_project].path )
 					{
@@ -762,13 +785,20 @@ i2b2.PM._processLaunchFramework = function() {
 					}
 				}
 				
+				//If no cell is found that get the '/'
 				if (!cellRef.name)
 				{
-					var  x = i2b2.h.XPath(oXML, "//cell_data[@id='"+cellKey+"']")[0];
-					cellRef.name = i2b2.h.getXNodeVal(x, "name");
-					cellRef.project_path = i2b2.h.getXNodeVal(x, "project_path");
-					cellRef.url = i2b2.h.getXNodeVal(x, "url");
-					cellRef.xmlStr = i2b2.h.Xml2String(x);	
+					for (var i=0; i<y.length; i++)
+					{					
+						var  x = i2b2.h.XPath(oXML, "//cell_data[@id='"+cellKey+"']")[i];
+						if ( i2b2.h.getXNodeVal(x, "project_path") == "/" )
+						{
+							cellRef.name = i2b2.h.getXNodeVal(x, "name");
+							cellRef.project_path = i2b2.h.getXNodeVal(x, "project_path");
+							cellRef.url = i2b2.h.getXNodeVal(x, "url");
+							cellRef.xmlStr = i2b2.h.Xml2String(x);	
+						}
+					}
 				}
 				// params
 				var x = i2b2.h.XPath(oXML, "//cell_data[@id='"+cellKey+"']/param[@name]");
@@ -823,14 +853,14 @@ i2b2.PM._processLaunchFramework = function() {
 			delete i2b2[cellKey];
 		}
 	}
-
+/* Legacy SHRINE code - Removed 6/3/16
 	// see if Shrine was loaded by the server
 	var t = i2b2.hive.cfg.lstCells["SHRINE"];
 	if (!Object.isUndefined(t) && t.serverLoaded) {
 		i2b2.PM.model.shrine_domain = true;
 	}
 	delete t;
-
+*/
 
 	// create a list of valid Cells that are loaded for this session
 	var t = {};

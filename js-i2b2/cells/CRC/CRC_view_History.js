@@ -63,11 +63,15 @@ i2b2.CRC.view.history.showOptions = function(subScreen){
 		this.modalOptions.validate = function(){
 			// now process the form data
 			var tmpValue = parseInt($('HISTMaxQryDisp').value, 10);
-			if (!isNaN(tmpValue) && tmpValue <= 0) {
+			var value = $('HISTMaxQryDisp').value;
+			if(!isNaN(value) && parseInt(Number(value)) == value && !isNaN(parseInt(value, 10))){
+				$('HISTMaxQryDisp').style.border = "2px inset";
+				return true;
+			} else {
 				alert("The max number of Queries must be a whole number larger then zero.");
+				$('HISTMaxQryDisp').style.border = "2px inset red";
 				return false;
 			}
-			return true;
 		};
 		this.modalOptions.render(document.body);
 	} 
@@ -318,6 +322,12 @@ i2b2.CRC.view.history.ZoomView = function() {
 
 // =========== Context Menu Suff =========== 
 // ================================================================================================== //
+i2b2.CRC.view.history.doDisplay = function() {  // WEBCLIENT-173
+	var op = i2b2.CRC.view.history.contextRecord; // object path
+	i2b2.CRC.ctrlr.QT.doQueryLoad(op.sdxInfo.sdxKeyValue);
+}
+
+// ================================================================================================== //
 i2b2.CRC.view.history.doRename = function() { 
 	var op = i2b2.CRC.view.history.contextRecord; // object path
 	i2b2.CRC.ctrlr.history.queryRename(op.sdxInfo.sdxKeyValue, false, op); 
@@ -514,6 +524,7 @@ i2b2.events.afterCellInit.subscribe(
 					{ lazyload: true,
 					trigger: $('crcNavDisp'), 
 					itemdata: [
+						{ text: "Display",	onclick: { fn: i2b2.CRC.view.history.doDisplay } },
 						{ text: "Rename", 	onclick: { fn: i2b2.CRC.view.history.doRename } },
 						{ text: "Delete", 		onclick: { fn: i2b2.CRC.view.history.doDelete } },
 						{ text: "Refresh All",	onclick: { fn: i2b2.CRC.view.history.doRefreshAll } }

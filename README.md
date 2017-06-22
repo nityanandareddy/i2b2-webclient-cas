@@ -57,3 +57,4 @@ Open the `i2b2_config_data.js` file, and add the following properties to your do
 
 ## Licensing
 This code is released under the i2b2 Software License version 2.1, available at https://www.i2b2.org/software/i2b2_license.html.
+

@@ -24,7 +24,7 @@ i2b2.CRC.ctrlr.QueryStatus._GetTitle = function(resultType, oRecord, oXML) {
 			// create the title using shrine setting
 			if (oRecord.size >= 10) {
 				if (i2b2.PM.model.isObfuscated) {
-					title = t+" - "+oRecord.size+"&plusmn;3 encounters";
+					title = t+" - "+oRecord.size+"&plusmn;"+i2b2.UI.cfg.obfuscatedDisplayNumber.toString()+" encounters";
 				} else {
 					title = t; //+" - "+oRecord.size+" encounters";
 				}
@@ -47,7 +47,7 @@ i2b2.CRC.ctrlr.QueryStatus._GetTitle = function(resultType, oRecord, oXML) {
 			// create the title using shrine setting
 			if (oRecord.size >= 10) {
 				if (i2b2.PM.model.isObfuscated) {
-					title = t+" - "+oRecord.size+"&plusmn;3 patients";
+					title = t+" - "+oRecord.size+"&plusmn;"+i2b2.UI.cfg.obfuscatedDisplayNumber.toString()+" patients";
 				} else {
 					title = t; //+" - "+oRecord.size+" patients";
 				}
@@ -70,7 +70,7 @@ i2b2.CRC.ctrlr.QueryStatus._GetTitle = function(resultType, oRecord, oXML) {
 			// create the title using shrine setting
 			if (oRecord.size >= 10) {
 				if (i2b2.PM.model.isObfuscated) {
-					title = t+" - "+oRecord.size+"&plusmn;3 patients";
+					title = t+" - "+oRecord.size+"&plusmn;"+i2b2.UI.cfg.obfuscatedDisplayNumber.toString()+" patients";
 				} else {
 					title = t+" - "+oRecord.size+" patients";
 				}
@@ -255,11 +255,12 @@ i2b2.CRC.ctrlr.QueryStatus.prototype = function() {
 
 				var ri_list = results.refXML.getElementsByTagName('query_result_instance');
 				var l = ri_list.length;
+				var description = "";  // Query Report BG
 				for (var i=0; i<l; i++) {
 					var temp = ri_list[i];
 					// get the query name for display in the box
-					var description = i2b2.h.XPath(temp, 'descendant-or-self::description')[0].firstChild.nodeValue;
-					self.dispDIV.innerHTML += "<div style=\"clear: both;  padding-top: 10px; font-weight: bold;\">" + description + "</div>";					
+					description = i2b2.h.XPath(temp, 'descendant-or-self::description')[0].firstChild.nodeValue;
+					self.dispDIV.innerHTML += "<div class=\"mainGrp\" style=\"clear: both;  padding-top: 10px; font-weight: bold;\">" + description + "</div>";					// Query Report BG
 					sCompiledResultsTest += description + '\n';  //snm0
 				} 
 				var crc_xml = results.refXML.getElementsByTagName('crc_xml_result');
@@ -275,16 +276,21 @@ i2b2.CRC.ctrlr.QueryStatus.prototype = function() {
 						var name = params[i2].getAttribute("name");
 						if (i2b2.PM.model.isObfuscated) {
 							if ( params[i2].firstChild.nodeValue < 4) {
-								var value = "<3";	
+								var value = "<"+i2b2.UI.cfg.obfuscatedDisplayNumber.toString();	
 							} else {
-								var value = params[i2].firstChild.nodeValue + "&plusmn;3" ;
+								var value = params[i2].firstChild.nodeValue + "&plusmn;"+i2b2.UI.cfg.obfuscatedDisplayNumber.toString() ;
 							}
 						} else
 						{
 							var value = params[i2].firstChild.nodeValue;							
 						}
+						if(i2b2.UI.cfg.useFloorThreshold){
+							if (params[i2].firstChild.nodeValue < i2b2.UI.cfg.floorThresholdNumber){
+								var value = i2b2.UI.cfg.floorThresholdText + i2b2.UI.cfg.floorThresholdNumber.toString();
+							}
+						}
 						// display a line of results in the status box
-						self.dispDIV.innerHTML += "<div style=\"clear: both; margin-left: 20px; float: left; height: 16px; line-height: 16px;\">" + params[i2].getAttribute("column") + ": <font color=\"#0000dd\">" + value  + "</font></div>";
+						self.dispDIV.innerHTML += "<div class=\'" + description + "\' style=\"clear: both; margin-left: 20px; float: left; height: 16px; line-height: 16px;\">" + params[i2].getAttribute("column") + ": <font color=\"#0000dd\">" + value  + "</font></div>";  //Query Report BG
 						sCompiledResultsTest += params[i2].getAttribute("column") + " : " + value + "\n"; //snm0
 					}
 					var ri_id = i2b2.h.XPath(temp, 'descendant-or-self::result_instance_id')[0].firstChild.nodeValue;
@@ -314,6 +320,16 @@ i2b2.CRC.ctrlr.QueryStatus.prototype = function() {
 			self.dispDIV.innerHTML = '<div style="clear:both;"><div style="float:left; font-weight:bold">Finished Query: "'+self.QM.name+'"</div>';
 			self.dispDIV.innerHTML += '<div style="float:right">['+s+' secs]</div>';
 			
+			//Query Report BG
+			if((!Object.isUndefined(self.QI.start_date)) && (!Object.isUndefined(self.QI.end_date)))
+			{
+				var startDateElem = "<input type=\"hidden\" id=\"startDateElem\" value=\"" + self.QI.start_date + "\">";
+				var startDateMillsecElem = "<input type=\"hidden\" id=\"startDateMillsecElem\" value=\"" + moment(self.QI.start_date) + "\">";
+				var endDateElem = "<input type=\"hidden\" id=\"endDateElem\" value=\"" + self.QI.end_date + "\">";
+				var endDateMillisecElem = "<input type=\"hidden\" id=\"endDateMillsecElem\" value=\"" + moment(self.QI.end_date) + "\">";
+				self.dispDIV.innerHTML += startDateElem + startDateMillsecElem + endDateElem + endDateMillisecElem;
+			}
+			//End Query Report BG
 			//		self.dispDIV.innerHTML += '<div style="margin-left:20px; clear:both; height:16px; line-height:16px; "><div height:16px; line-height:16px; ">Compute Time: ' + (Math.floor((self.QI.end_date - self.QI.start_date)/100))/10 + ' secs</div></div>';
 			//		self.dispDIV.innerHTML += '</div>';
 			$('runBoxText').innerHTML = "Run Query";
@@ -402,7 +418,7 @@ i2b2.CRC.ctrlr.QueryStatus.prototype = function() {
 								// Concepts
 								for (var i2=0; i2 < panel_list[p2].items.length; i2++) {
 									sdxData[0] = panel_list[p2].items[i2];
-									i2b2.Timeline.conceptDropped(sdxData);
+									i2b2.Timeline.conceptDropped(sdxData, false); // nw096 - turn off dialogs when auto-generating timeline
 								}
 							}
 							}
@@ -438,14 +454,19 @@ i2b2.CRC.ctrlr.QueryStatus.prototype = function() {
 						if (i2b2.PM.model.isObfuscated) {
 							if (i2b2.h.XPath(xml_v, 'descendant::total_time_second/text()/..')[i2].firstChild.nodeValue < 4)
 							{
-							    var value = "<3";
+							    var value = "<"+i2b2.UI.cfg.obfuscatedDisplayNumber.toString();
 							} else {
-								var value = i2b2.h.XPath(xml_v, 'descendant::total_time_second/text()/..')[i2].firstChild.nodeValue + "&plusmn;3";
+								var value = i2b2.h.XPath(xml_v, 'descendant::total_time_second/text()/..')[i2].firstChild.nodeValue + "&plusmn;"+i2b2.UI.cfg.obfuscatedDisplayNumber.toString();
 							}
 						} else
 						{
 							var value =  i2b2.h.XPath(xml_v, 'descendant::total_time_second/text()/..')[i2].firstChild.nodeValue;							
-						}					
+						}
+						if(i2b2.UI.cfg.useFloorThreshold){
+							if (i2b2.h.XPath(xml_v, 'descendant::total_time_second/text()/..')[i2].firstChild.nodeValue < i2b2.UI.cfg.floorThresholdNumber){
+								var value = i2b2.UI.cfg.floorThresholdText + i2b2.UI.cfg.floorThresholdNumber.toString();
+							}
+						}
 					self.dispDIV.innerHTML += '<div style="margin-left:20px; clear:both; line-height:16px; ">' + i2b2.h.XPath(xml_v, 'descendant::name/text()/..')[i2].firstChild.nodeValue + '<font color="#0000dd">: ' + value + ' secs</font></div>';
 					//snm0
 					//alert('<div style="margin-left:20px; clear:both; line-height:16px; ">' + i2b2.h.XPath(xml_v, 'descendant::name/text()/..')[i2].firstChild.nodeValue + '<font color="#0000dd">: ' + value + ' secs</font></div>');
@@ -500,84 +521,114 @@ i2b2.CRC.ctrlr.QueryStatus.prototype = function() {
 		this.callbackQueryDef = new i2b2_scopedCallback();
 		this.callbackQueryDef.scope = this;
 		this.callbackQueryDef.callback = function(results) {
-				
-			if (results.error) {
-					var temp = results.refXML.getElementsByTagName('response_header')[0];
-					if (undefined != temp) {
-						results.errorMsg = i2b2.h.XPath(temp, 'descendant-or-self::result_status/status')[0].firstChild.nodeValue;
-						if (results.errorMsg.substring(0,9) == "LOCKEDOUT")
-						{
-							results.errorMsg = 'As an "obfuscated user" you have exceeded the allowed query repeat and are now LOCKED OUT, please notify your system administrator.';
+			try{
+				if (results.error) {
+						var temp = results.refXML.getElementsByTagName('response_header')[0];
+						if (undefined != temp) {
+							results.errorMsg = i2b2.h.XPath(temp, 'descendant-or-self::result_status/status')[0].firstChild.nodeValue;
+							if (results.errorMsg.substring(0,9) == "LOCKEDOUT")
+							{
+								results.errorMsg = 'As an "obfuscated user" you have exceeded the allowed query repeat and are now LOCKED OUT, please notify your system administrator.';
+							}
 						}
-					}
-				alert(results.errorMsg);
-				private_cancelQuery();
-				return;
-			} else {
-				//		"results" object contains the following attributes:
-				//			refXML: xmlDomObject <--- for data processing
-				//			msgRequest: xml (string)
-				//			msgResponse: xml (string)
-				//			error: boolean
-				//			errorStatus: string [only with error=true]
-				//			errorMsg: string [only with error=true]
-				// save the query master
-				
-				//Check to see if condition failed
-				var condition = results.refXML.getElementsByTagName('condition')[0];
-				if (condition.getAttribute("type") == "ERROR")
-				{
-					
-					results.errorMsg = 'ERROR: ' + condition.firstChild.nodeValue;
 					alert(results.errorMsg);
 					private_cancelQuery();
 					return;
-				}
-				var temp = results.refXML.getElementsByTagName('query_master')[0];
-				self.QM.id = i2b2.h.getXNodeVal(temp, 'query_master_id');
-				self.QM.name = i2b2.h.XPath(temp, 'descendant-or-self::name')[0].firstChild.nodeValue;
-
-				// save the query instance
-				var temp = results.refXML.getElementsByTagName('query_instance')[0];
-				self.QI.id = i2b2.h.XPath(temp, 'descendant-or-self::query_instance_id')[0].firstChild.nodeValue;
-				self.QI.status = i2b2.h.XPath(temp, 'descendant-or-self::query_status_type/name')[0].firstChild.nodeValue;
-				self.QI.statusID = i2b2.h.XPath(temp, 'descendant-or-self::query_status_type/status_type_id')[0].firstChild.nodeValue;
-				
-				// we don't need to poll, all Result instances are listed in this message
-				if (false && (self.QI.status == "INCOMPLETE" || self.QI.status == "COMPLETED" || self.QI.status == "ERROR")) {
-					// create execution time string
-					var d = new Date();
-					var t = Math.floor((d.getTime() - private_startTime)/100)/10;
-					var exetime = t.toString();
-					if (exetime.indexOf('.') < 0) {
-						exetime += '.0';
-					}
-					var qi_list = results.refXML.getElementsByTagName('query_result_instance');
-					var l = qi_list.length;
-					for (var i=0; i<l; i++) {
-						try {
-							var qi = qi_list[i];
-							var temp = new Object();
-							temp.size = i2b2.h.getXNodeVal(qi, 'set_size');
-							temp.QI_ID = i2b2.h.getXNodeVal(qi, 'query_instance_id');
-							temp.QRS_ID = i2b2.h.getXNodeVal(qi, 'result_instance_id');
-							temp.QRS_Type = i2b2.h.XPath(qi, 'descendant-or-self::query_result_type/name')[0].firstChild.nodeValue;
-							temp.QRS_TypeID = i2b2.h.XPath(qi, 'descendant-or-self::query_result_type/result_type_id')[0].firstChild.nodeValue;
-							temp.QRS_Status = i2b2.h.XPath(qi, 'descendant-or-self::query_status_type/name')[0].firstChild.nodeValue;
-							temp.QRS_Status_ID = i2b2.h.XPath(qi, 'descendant-or-self::query_status_type/status_type_id')[0].firstChild.nodeValue;
-							temp.QRS_time = exetime;
-							// set the proper title if it was not already set
-							if (!temp.title) {
-								temp.title = i2b2.CRC.ctrlr.QueryStatus._GetTitle(temp.QRS_Type, temp, qi);
-							}
-							self.QRS[temp.QRS_ID] = temp;
-						} catch	(e) {}
-					}
-					private_singleton_isRunning = false;
 				} else {
-					// another poll is required
-					setTimeout("i2b2.CRC.ctrlr.currentQueryStatus.pollStatus()", this.polling_interval);
-				}				
+					//		"results" object contains the following attributes:
+					//			refXML: xmlDomObject <--- for data processing
+					//			msgRequest: xml (string)
+					//			msgResponse: xml (string)
+					//			error: boolean
+					//			errorStatus: string [only with error=true]
+					//			errorMsg: string [only with error=true]
+					// save the query master
+					
+					//Check to see if condition failed
+					var condition = results.refXML.getElementsByTagName('condition')[0];
+					if (condition.getAttribute("type") == "ERROR")
+					{
+						
+						results.errorMsg = 'ERROR: ' + condition.firstChild.nodeValue;
+						alert(results.errorMsg);
+						private_cancelQuery();
+						return;
+					}
+					var temp = results.refXML.getElementsByTagName('query_master')[0];
+					self.QM.id = i2b2.h.getXNodeVal(temp, 'query_master_id');
+					//Query Report BG
+					//Update the userid element when query is run first time
+					var userId = i2b2.h.getXNodeVal(temp,'user_id');
+					if(userId)
+					{
+						var existingUserIdElemList = $$("#userIdElem");
+						if(existingUserIdElemList)
+						{
+							existingUserIdElemList.each(function(existingUserIdElem){
+								existingUserIdElem.remove();
+							});
+						}
+						$("crcQueryToolBox.bodyBox").insert(new Element('input',{'type':'hidden','id':'userIdElem','value':userId}));
+					}
+					//End Query Report BG
+					self.QM.name = i2b2.h.XPath(temp, 'descendant-or-self::name')[0].firstChild.nodeValue;
+
+					// save the query instance
+					var temp = results.refXML.getElementsByTagName('query_instance')[0];
+					self.QI.id = i2b2.h.XPath(temp, 'descendant-or-self::query_instance_id')[0].firstChild.nodeValue;
+					self.QI.start_date = i2b2.h.XPath(temp, 'descendant-or-self::start_date')[0].firstChild.nodeValue; //Query Report BG
+					var temp = i2b2.h.XPath(temp, 'descendant-or-self::end_date')[0];
+					if (undefined != temp) {
+					   self.QI.end_date = i2b2.h.XPath(temp, 'descendant-or-self::end_date')[0].firstChild.nodeValue; //Query Report BG
+					}
+					var temp = self.QI.status = i2b2.h.XPath(temp, 'descendant-or-self::query_status_type/name')[0];
+					if (undefined != temp) {
+						self.QI.status = i2b2.h.XPath(temp, 'descendant-or-self::query_status_type/name')[0].firstChild.nodeValue;
+					}
+					var temp = self.QI.statusID = i2b2.h.XPath(temp, 'descendant-or-self::query_status_type/status_type_id')[0];
+					if (undefined != temp) {
+						self.QI.statusID = i2b2.h.XPath(temp, 'descendant-or-self::query_status_type/status_type_id')[0].firstChild.nodeValue;
+					}
+					
+					// we don't need to poll, all Result instances are listed in this message
+					if (false && (self.QI.status == "INCOMPLETE" || self.QI.status == "COMPLETED" || self.QI.status == "ERROR")) {
+						// create execution time string
+						var d = new Date();
+						var t = Math.floor((d.getTime() - private_startTime)/100)/10;
+						var exetime = t.toString();
+						if (exetime.indexOf('.') < 0) {
+							exetime += '.0';
+						}
+						var qi_list = results.refXML.getElementsByTagName('query_result_instance');
+						var l = qi_list.length;
+						for (var i=0; i<l; i++) {
+							try {
+								var qi = qi_list[i];
+								var temp = new Object();
+								temp.size = i2b2.h.getXNodeVal(qi, 'set_size');
+								temp.QI_ID = i2b2.h.getXNodeVal(qi, 'query_instance_id');
+								temp.QRS_ID = i2b2.h.getXNodeVal(qi, 'result_instance_id');
+								temp.QRS_Type = i2b2.h.XPath(qi, 'descendant-or-self::query_result_type/name')[0].firstChild.nodeValue;
+								temp.QRS_TypeID = i2b2.h.XPath(qi, 'descendant-or-self::query_result_type/result_type_id')[0].firstChild.nodeValue;
+								temp.QRS_Status = i2b2.h.XPath(qi, 'descendant-or-self::query_status_type/name')[0].firstChild.nodeValue;
+								temp.QRS_Status_ID = i2b2.h.XPath(qi, 'descendant-or-self::query_status_type/status_type_id')[0].firstChild.nodeValue;
+								temp.QRS_time = exetime;
+								// set the proper title if it was not already set
+								if (!temp.title) {
+									temp.title = i2b2.CRC.ctrlr.QueryStatus._GetTitle(temp.QRS_Type, temp, qi);
+								}
+								self.QRS[temp.QRS_ID] = temp;
+							} catch	(e) {}
+						}
+						private_singleton_isRunning = false;
+					} else {
+						// another poll is required
+						setTimeout("i2b2.CRC.ctrlr.currentQueryStatus.pollStatus()", this.polling_interval);
+					}				
+				}
+			} catch(e){
+				i2b2.CRC.ctrlr.currentQueryStatus.cancelQuery();
+				i2b2.CRC.ctrlr.currentQueryStatus = false;
 			}
 		}
 		
