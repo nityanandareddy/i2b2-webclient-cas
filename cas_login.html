@@ -18,7 +18,8 @@ try {
   i2b2.PM.set_cas_ticket_cookie_from_url();
 
   // We assume the webclient page is at ./ relative to this login page.
-  document.location = "./"
+  //document.location = "./"
+  document.location = casloginCheck()
 
 //} catch (e if e instanceOf i2b2.PM.CASTicketMissing) {
 } catch (e) {
