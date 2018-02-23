@@ -25,6 +25,7 @@ if (undefined==i2b2.PM) { i2b2.PM = {}; }
  */
 i2b2.PM.doCASLogin = function() {
     var domainname = i2b2.h.getJsonConfig('i2b2_config_data.js').casDomain
+    alert(domainname);
     var session_or_ticket = null;
     var login_password = i2b2.PM.model.login_password ? i2b2.PM.model.login_password : null;
     var login_service = null;
@@ -191,5 +192,33 @@ function readCookie(name) {
 
 function eraseCookie(name) {
     createCookie(name,"",-1);
+}
+
+function casloginCheck()
+{
+  /*	make a call to /proxy-resuorce/user/me to get status code and check the status code
+  		if status code is 200 that means user already logedin
+  	  		so redirect to ./
+    	else redirecting CAS server though i2b2-integration-webapp by calling cas_server + "/login?service=" + encodeURIComponent(document.location).
+  */
+   var xhr = new XMLHttpRequest();
+   xhr.open("GET", domain.CAS_server+"/proxy-resource/users/me", false);
+   xhr.send();
+   xhr.onreadystatechange = function()
+   {
+     if (xhr.readyState === 4){
+        if (xhr.status === 200){
+           console.log("user login check success");
+           return "./";
+        }else if(xhr.status === 400) {
+           console.log("Redirecting to user login");
+           return cas_server + "/login?service=" + encodeURIComponent(document.location);
+        }else{
+        	console.log("Invalid status code");
+        }
+     }else{
+    	 console.log("Request is processing");
+     }
+   }
 }
 
