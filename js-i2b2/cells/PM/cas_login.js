@@ -26,9 +26,9 @@ if (undefined==i2b2.PM) { i2b2.PM = {}; }
 i2b2.PM.doCASLogin = function() {
     var domainname = i2b2.h.getJsonConfig('i2b2_config_data.js').casDomain
     alert(domainname);
-    var session_or_ticket = null;
+
     var login_password = i2b2.PM.model.login_password ? i2b2.PM.model.login_password : null;
-    var login_service = null;
+
     if (login_password && !login_password.blank()) {
         var start = login_password.indexOf("<");
         var is_token_start = login_password.indexOf("is_token", start + 1);
@@ -67,17 +67,19 @@ i2b2.PM.doCASLogin = function() {
         alert('login failed: no such domain in i2b2 config: ' + domainname);
         return;
     }
-    
+    casloginCheck(document.location);
+
+};
+
+function afterCaslogin()
+{
+    // JSESSIONID NEED TO CHECK WHETHER VALID INOUT OR NOT
+    var session_or_ticket =  readCookie("JSESSIONID");
     if (!session_or_ticket) {
-        session_or_ticket = readCookie("CAS_ticket");
-        login_service = document.location + "cas_login.html?cas_server=" + encodeURIComponent(domain.CAS_server);
-    }
-    
-    if (!session_or_ticket) {
-	document.location = login_service;
+        alert("No session found, please login.")
         return;
     }
-    
+
     i2b2.PM.model.CAS_server = domain.CAS_server;
     i2b2.PM.model.EC_I2B2_INTEGRATION_URL = domain.EC_I2B2_INTEGRATION_URL;
     i2b2.PM.model.EC_USER_AGREEMENT_URL = domain.EC_USER_AGREEMENT_URL;
@@ -92,7 +94,7 @@ i2b2.PM.doCASLogin = function() {
 
     var callback = new i2b2_scopedCallback(i2b2.PM._processUserConfig, i2b2.PM);
     var parameters = {
-        domain: domain.domain, 
+        domain: domain.domain,
         is_shrine: Boolean.parseTo(domain.isSHRINE),
         project: domain.project,
         username: login_service,
@@ -108,8 +110,7 @@ i2b2.PM.doCASLogin = function() {
 
     _make_dialog();
     i2b2.PM.ajax.getUserAuth("PM:Login", parameters, callback, transportopts);
-};
-
+}
 
 function _flag(expr, fallback){
     if (expr != undefined) {
@@ -156,18 +157,6 @@ i2b2.PM.casGetQueryParameters = function(str) {
     return (str || document.location.search).replace(/(^\?)/,'').split("&").map(function(n){return n = n.split("="),this[n[0]] = decodeURIComponent(n[1]),this}.bind({}))[0];
 };
 
-i2b2.PM.set_cas_ticket_cookie_from_url = function(){
-    var match, i;
-    var adr = location.href;
-    match = /ticket=([^&#]*)/.exec(adr);
-    var ticket = match ? match[1] : null;
-    if (!ticket) {
-	throw new i2b2.PM.CASTicketMissing();
-    }
-
-    createCookie("CAS_ticket", ticket, 1);
-}
-
 // all praise quirksmode. http://www.quirksmode.org/js/cookies.html
 function createCookie(name,value,days) {
     if (days) {
@@ -194,31 +183,27 @@ function eraseCookie(name) {
     createCookie(name,"",-1);
 }
 
-function casloginCheck()
-{
-  /*	make a call to /proxy-resuorce/user/me to get status code and check the status code
-  		if status code is 200 that means user already logedin
-  	  		so redirect to ./
-    	else redirecting CAS server though i2b2-integration-webapp by calling cas_server + "/login?service=" + encodeURIComponent(document.location).
-  */
-   var xhr = new XMLHttpRequest();
-   xhr.open("GET", domain.CAS_server+"/proxy-resource/users/me", false);
-   xhr.send();
-   xhr.onreadystatechange = function()
-   {
-     if (xhr.readyState === 4){
-        if (xhr.status === 200){
-           console.log("user login check success");
-           return "./";
-        }else if(xhr.status === 400) {
-           console.log("Redirecting to user login");
-           return cas_server + "/login?service=" + encodeURIComponent(document.location);
-        }else{
-        	console.log("Invalid status code");
-        }
-     }else{
-    	 console.log("Request is processing");
-     }
-   }
-}
+function casloginCheck(integrationmodule) {
+    /*	make a call to /proxy-resuorce/user/me to get status code and check the status code
+            if status code is 200 that means user already logedin
+                  so redirect to ./
+          else redirecting CAS server though i2b2-integration-webapp by calling cas_server + "/login?service=" + encodeURIComponent(document.location).
+    */
 
+    new Ajax.Request(integrationmodule + '/proxy-resource/users/me', {
+        method: 'get',
+        onComplete: function (response) {
+            if (response.status === 200) {
+                console.log("user login check success");
+                afterCaslogin();
+            } else if (response.status === 400) {
+                console.log("Redirecting to user login");
+                window.location.href = integrationmodule + "/protected/login?webclient=" + encodeURIComponent("https://eurekadev.bmi.emory.edu/i2b2/");
+            }
+            else {
+                alert(" Invalid status code. Please try again.");
+            }
+        }
+    });
+
+}

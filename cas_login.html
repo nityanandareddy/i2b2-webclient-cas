@@ -15,16 +15,16 @@ If you'd like to use it, please turn on JavaScript.</p>
 var cas_server =i2b2.PM.casGetQueryParameters()['cas_server'];
 
 try {
-  i2b2.PM.set_cas_ticket_cookie_from_url();
+  //i2b2.PM.set_cas_ticket_cookie_from_url();
 
   // We assume the webclient page is at ./ relative to this login page.
   //document.location = "./"
-  document.location = casloginCheck(); 
+  //casloginCheck(cas_server);
 
 //} catch (e if e instanceOf i2b2.PM.CASTicketMissing) {
 } catch (e) {
   // Go get a ticket and come back
-  document.location = cas_server + "/login?service=" + encodeURIComponent(document.location);
+  //document.location = cas_server + "/login?service=" + encodeURIComponent(document.location);
 }
 </script>
 </body>
