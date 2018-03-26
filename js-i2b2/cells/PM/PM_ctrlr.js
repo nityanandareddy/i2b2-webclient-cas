@@ -96,7 +96,6 @@ i2b2.PM.doLogin = function() {
 
 
 // ================================================================================================== //
-
 i2b2.PM._processUserConfigSuccess = function (data) {
     try {
 		var t_passwd = i2b2.h.XPath(data.refXML, '//user/password')[0]; //[@token_ms_timeout]
@@ -455,7 +454,6 @@ i2b2.PM._processUserConfig = function (data) {
 
 // ================================================================================================== //
 i2b2.PM.doLogout = function() {
-
     i2b2.PM._destroyEurekaClinicalSessions(function() {
 	if (undefined != i2b2.PM.model.CAS_server) {
 	    eraseCookie("JSESSIONID");

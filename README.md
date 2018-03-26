@@ -1,5 +1,6 @@
 # i2b2-webclient-cas
 
+[Atlanta Clinical and Translational Science Institute (ACTSI)](http://www.actsi.org), [Emory University](http://www.emory.edu), Atlanta, GA
 
 ## What does it do?
 This is a stock i2b2 1.7.08a web client patched with support for 
