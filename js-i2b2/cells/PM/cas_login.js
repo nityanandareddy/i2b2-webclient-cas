@@ -23,6 +23,7 @@ if (undefined==i2b2.PM) { i2b2.PM = {}; }
 /**
  * doCASLogin gets ticket from cookie, looks up domain info, and calls PM:Login
  */
+
 i2b2.PM.doCASLogin = function() {
     var domainname = i2b2.h.getJsonConfig('i2b2_config_data.js').casDomain
     var session_or_ticket = null;
@@ -66,7 +67,7 @@ i2b2.PM.doCASLogin = function() {
         alert('login failed: no such domain in i2b2 config: ' + domainname);
         return;
     }
-    
+
     if (!session_or_ticket) {
         session_or_ticket = readCookie("CAS_ticket");
         login_service = document.location + "cas_login.html?cas_server=" + encodeURIComponent(domain.CAS_server);
