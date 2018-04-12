@@ -1,5 +1,5 @@
 {
-	urlProxy: "index.php",
+	urlProxy: "https://localhost:8443/eurekaclinical-i2b2-integration-webapp/i2b2/",
     urlFramework: "js-i2b2/",
     casDomain: "i2b2demo",
 	//-------------------------------------------------------------------------------------------
@@ -10,7 +10,7 @@
 		  urlCellPM: "http://localhost:8443/i2b2/services/PMService/",
 		  allowAnalysis: true,
 		  debug: false,
-		  "CAS_server": "https://localhost:8443/cas-server/"
+		  "CAS_server": "https://localhost:8443/eurekaclinical-i2b2-integration-webapp"
 		}
 	]
 	//-------------------------------------------------------------------------------------------

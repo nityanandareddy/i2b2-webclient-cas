@@ -28,33 +28,33 @@ i2b2.PM.doCASLogin = function() {
     var domainname = i2b2.h.getJsonConfig('i2b2_config_data.js').casDomain
     alert(domainname);
 
-    var login_password = i2b2.PM.model.login_password ? i2b2.PM.model.login_password : null;
+        var login_password = i2b2.PM.model.login_password ? i2b2.PM.model.login_password : null;
 
-    if (login_password && !login_password.blank()) {
-        var start = login_password.indexOf("<");
-        var is_token_start = login_password.indexOf("is_token", start + 1);
-        var is_token_val = false;
-        if (is_token_start >= 0) {
-            var is_token_text_start = login_password.indexOf('"', is_token_start + 1);
-            if (is_token_text_start >= 0) {
-                var is_token_text_finish = login_password.indexOf('"', is_token_text_start + 1);
-                if (is_token_text_finish >= 0 && is_token_text_start < is_token_text_finish) {
-                    is_token_val = login_password.substring(is_token_text_start + 1, is_token_text_finish).toUpperCase() === 'TRUE';
+        if (login_password && !login_password.blank()) {
+            var start = login_password.indexOf("<");
+            var is_token_start = login_password.indexOf("is_token", start + 1);
+            var is_token_val = false;
+            if (is_token_start >= 0) {
+                var is_token_text_start = login_password.indexOf('"', is_token_start + 1);
+                if (is_token_text_start >= 0) {
+                    var is_token_text_finish = login_password.indexOf('"', is_token_text_start + 1);
+                    if (is_token_text_finish >= 0 && is_token_text_start < is_token_text_finish) {
+                        is_token_val = login_password.substring(is_token_text_start + 1, is_token_text_finish).toUpperCase() === 'TRUE';
+                    }
+                }
+            }
+            if (is_token_val) {
+                var start_val = login_password.indexOf(">", is_token_start + 1);
+                var finish_val = start_val >= 0 ? login_password.indexOf("<", start_val + 1) : -1;
+                if (start_val >= 0 && finish_val >= 0 && start_val < finish_val) {
+                    var session_key = login_password.substring(start_val + 1, finish_val);
+                    if (session_key.startsWith('SessionKey:')) {
+                        session_or_ticket = session_key;
+                        login_service = i2b2.PM.model.login_username;
+                    }
                 }
             }
         }
-        if (is_token_val) {
-            var start_val = login_password.indexOf(">", is_token_start + 1);
-            var finish_val = start_val >= 0 ? login_password.indexOf("<", start_val + 1) : -1;
-            if (start_val >= 0 && finish_val >= 0 && start_val < finish_val) {
-                var session_key = login_password.substring(start_val + 1, finish_val);
-                if (session_key.startsWith('SessionKey:')) {
-                    session_or_ticket = session_key;
-                    login_service = i2b2.PM.model.login_username;
-                }
-            }
-        }
-    }
         
     var domain, domains = i2b2.PM.model.Domains;
     for (i = 0; i < domains.length; i++) {
@@ -68,19 +68,19 @@ i2b2.PM.doCASLogin = function() {
         alert('login failed: no such domain in i2b2 config: ' + domainname);
         return;
     }
-    casloginCheck(document.location);
+    casloginCheck(domain.CAS_server, domain);
 
 };
 
-function afterCaslogin()
+function afterCaslogin(domain)
 {
     // JSESSIONID NEED TO CHECK WHETHER VALID INOUT OR NOT
-    var session_or_ticket =  readCookie("JSESSIONID");
-    if (!session_or_ticket) {
+    //var session_or_ticket =  readCookie("JSESSIONID");
+   /* if (!session_or_ticket) {
         alert("No session found, please login.")
         return;
     }
-
+*/
     i2b2.PM.model.CAS_server = domain.CAS_server;
     i2b2.PM.model.EC_I2B2_INTEGRATION_URL = domain.EC_I2B2_INTEGRATION_URL;
     i2b2.PM.model.EC_USER_AGREEMENT_URL = domain.EC_USER_AGREEMENT_URL;
@@ -98,13 +98,13 @@ function afterCaslogin()
         domain: domain.domain,
         is_shrine: Boolean.parseTo(domain.isSHRINE),
         project: domain.project,
-        username: login_service,
-        password_text: session_or_ticket
+        username: '',
+        password_text: ''
     };
     var transportopts = {
         url: domain.urlCellPM,
-        user: login_service,
-        password: session_or_ticket,
+        user: '',
+        password: '',
         domain: domain.domain,
         project: domain.project
     };
@@ -171,7 +171,7 @@ function createCookie(name,value,days) {
 
 function readCookie(name) {
     var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
+    var ca = $.cookie.split(';');
     for(var i=0;i < ca.length;i++) {
 	var c = ca[i];
 	while (c.charAt(0)==' ') c = c.substring(1,c.length);
@@ -184,7 +184,7 @@ function eraseCookie(name) {
     createCookie(name,"",-1);
 }
 
-function casloginCheck(integrationmodule) {
+function casloginCheck(integrationmodule, domain) {
     /*	make a call to /proxy-resuorce/user/me to get status code and check the status code
             if status code is 200 that means user already logedin
                   so redirect to ./
@@ -196,10 +196,10 @@ function casloginCheck(integrationmodule) {
         onComplete: function (response) {
             if (response.status === 200) {
                 console.log("user login check success");
-                afterCaslogin();
+                afterCaslogin(domain);
             } else if (response.status === 400) {
                 console.log("Redirecting to user login");
-                window.location.href = integrationmodule + "/protected/login?webclient=" + encodeURIComponent("https://eurekadev.bmi.emory.edu/i2b2/");
+                window.location.href = integrationmodule + "/protected/login?webclient=" + encodeURIComponent(document.location);
             }
             else {
                 alert(" Invalid status code. Please try again.");
