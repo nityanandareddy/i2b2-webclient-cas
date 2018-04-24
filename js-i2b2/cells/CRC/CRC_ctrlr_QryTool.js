@@ -105,7 +105,7 @@ function QueryToolController() {
 				dObj.name = i2b2.h.getXNodeVal(results.refXML,'name');
 				this.doSetQueryName(dObj.name); // BUG FIX - WEBCLIENT-102
 				dObj.timing = i2b2.h.XPath(qd[0],'descendant-or-self::query_timing/text()');
-				dObj.timing = dObj.timing[0].nodeValue;
+//				dObj.timing = dObj.timing[0].nodeValue; //will cause a null-pointer or undefined obj exception when dObj.timing has no length!
 				if($("crcQueryToolBox.bodyBox")){
 					var userId = i2b2.h.getXNodeVal(results.refXML,'user_id');
 					var existingUserIdElemList = $$("#userIdElem");
@@ -119,7 +119,8 @@ function QueryToolController() {
 				}
 
 				//i2b2.CRC.view.QT.queryTimingButtonset("label", dObj.timing);
-				i2b2.CRC.view.QT.setQueryTiming(dObj.timing);
+//				i2b2.CRC.view.QT.setQueryTiming(dObj.timing); //must check to prevent null-pointer or undefined obj exception that'll result in hang
+				if (dObj.timing && 0 < dObj.timing.length) i2b2.CRC.view.QT.setQueryTiming(dObj.timing[0].nodeValue);//to prevent null-ptr or undefined exception   
 				dObj.specificity = i2b2.h.getXNodeVal(qd[0],'specificity_scale');
 				//dObj.panels = new Array(new Array());
 	
@@ -348,57 +349,7 @@ function QueryToolController() {
 									var lvd = i2b2.h.XPath(pi[i2], 'descendant::constrain_by_value');
 									if ((lvd.length>0) && (i2b2.h.XPath(pi[i2], 'descendant::constrain_by_modifier').length == 0)){
 										lvd = lvd[0];
-										// pull the LabValue definition for concept
-										// extract & translate
-										var t = i2b2.h.getXNodeVal(lvd,"value_constraint");
-										o.LabValues = {};
-										o.LabValues.NumericOp = i2b2.h.getXNodeVal(lvd,"value_operator");
-										o.LabValues.GeneralValueType = i2b2.h.getXNodeVal(lvd,"value_type");								
-										switch(o.LabValues.GeneralValueType) {
-											case "NUMBER":
-												o.LabValues.MatchBy = "VALUE";
-												if (t.indexOf(' and ')!=-1) {
-													// extract high and low values
-													t = t.split(' and ');
-													o.LabValues.ValueLow = t[0];
-													o.LabValues.ValueHigh = t[1];
-												} else {
-													o.LabValues.Value = t;
-												}
-												o.LabValues.UnitsCtrl = i2b2.h.getXNodeVal(lvd,"value_unit_of_measure");										
-
-												break;
-											case "STRING":
-												o.LabValues.MatchBy = "VALUE";
-												o.LabValues.ValueString = t;
-												break;
-											case "LARGETEXT":
-												o.LabValues.MatchBy = "VALUE";
-												o.LabValues.GeneralValueType = "LARGESTRING";
-												o.LabValues.DbOp = (i2b2.h.getXNodeVal(lvd,"value_operator") == "CONTAINS[database]" ? true : false );													
-												o.LabValues.ValueString = t;
-												break;
-											case "TEXT":	// this means Enum?
-												o.LabValues.MatchBy = "VALUE";
-												try {
-													o.LabValues.ValueEnum = eval("(Array"+t+")");
-													o.LabValues.GeneralValueType = "ENUM";																									
-												} catch(e) {
-													//is a string
-													o.LabValues.StringOp = i2b2.h.getXNodeVal(lvd,"value_operator");
-													o.LabValues.ValueString = t;
-													o.LabValues.GeneralValueType = "STRING";	
-													//i2b2.h.LoadingMask.hide();
-													//("Conversion Failed: Lab Value data = "+t);
-												}
-												break;
-											case "FLAG":
-												o.LabValues.MatchBy = "FLAG";
-												o.LabValues.ValueFlag = t
-												break;		
-											default:
-												o.LabValues.Value = t;
-										}		
+										o.LabValues = i2b2.CRC.view.modLabvaluesCtlr.processLabValuesForQryLoad(lvd);			
 									}
 									// sdx encapsulate
 									var sdxDataNode = i2b2.sdx.Master.EncapsulateData('CONCPT',o);
@@ -414,92 +365,36 @@ function QueryToolController() {
 										sdxDataNode.dateTo = itm.dateTo;
 									}
 											//o.xmlOrig = c;
-											if (i2b2.h.XPath(pi[i2], 'descendant::constrain_by_modifier').length > 0) {
+									if (i2b2.h.XPath(pi[i2], 'descendant::constrain_by_modifier').length > 0) {
 										//if (i2b2.h.getXNodeVal(pi[i2],'constrain_by_modifier') != null) {
-											sdxDataNode.origData.parent = {};
-											sdxDataNode.origData.parent.key = o.key;
-											//sdxDataNode.origData.parent.LabValues = o.LabValues;
-											sdxDataNode.origData.parent.hasChildren = o.hasChildren;
-											sdxDataNode.origData.parent.level = o.level;
-											sdxDataNode.origData.parent.name = o.name;
-											sdxDataNode.origData.key = i2b2.h.getXNodeVal(pi[i2],'constrain_by_modifier/modifier_key');
-											sdxDataNode.origData.applied_path = i2b2.h.getXNodeVal(pi[i2],'constrain_by_modifier/applied_path');
-											sdxDataNode.origData.name = i2b2.h.getXNodeVal(pi[i2],'constrain_by_modifier/modifier_name');
-											sdxDataNode.origData.isModifier = true;
-											this.hasModifier = true;
-											
-											// Lab Values processing
-											var lvd = i2b2.h.XPath(pi[i2], 'descendant::constrain_by_modifier/constrain_by_value');
-											if (lvd.length>0){
-												lvd = lvd[0];
-												// pull the LabValue definition for concept
-	
-												// extract & translate
-												var t = i2b2.h.getXNodeVal(lvd,"value_constraint");
-												o.ModValues = {};
-												o.ModValues.NumericOp = i2b2.h.getXNodeVal(lvd,"value_operator");
-												o.ModValues.GeneralValueType = i2b2.h.getXNodeVal(lvd,"value_type");	
-												switch(o.ModValues.GeneralValueType) {
-													case "NUMBER":
-														o.ModValues.MatchBy = "VALUE";
-														if (t.indexOf(' and ')!=-1) {
-															// extract high and low values
-															t = t.split(' and ');
-															o.ModValues.ValueLow = t[0];
-															o.ModValues.ValueHigh = t[1];
-														} else {
-															o.ModValues.Value = t;
-														}
-														o.ModValues.UnitsCtrl = i2b2.h.getXNodeVal(lvd,"value_unit_of_measure");	
-														break;
-													case "STRING":
-														o.ModValues.MatchBy = "VALUE";
-														o.ModValues.ValueString = t;
-														break;
-													case "LARGETEXT":
-														o.ModValues.MatchBy = "VALUE";
-														o.ModValues.GeneralValueType = "LARGESTRING";
-														o.ModValues.DbOp = (i2b2.h.getXNodeVal(lvd,"value_operator") == "CONTAINS[database]" ? true : false );													
-														o.ModValues.ValueString = t;
-														break;
-													case "TEXT":	// this means Enum?
-														o.ModValues.MatchBy = "VALUE";
-														try {
-															o.ModValues.ValueEnum = eval("(Array"+t+")");
-															o.ModValues.GeneralValueType = "ENUM";													
-														} catch(e) {
-															o.ModValues.StringOp = i2b2.h.getXNodeVal(lvd,"value_operator");
-															o.ModValues.ValueString = t;
-															
-														//	i2b2.h.LoadingMask.hide();
-														//	console.error("Conversion Failed: Lab Value data = "+t);
-														}
-														break;
-													case "FLAG":
-														o.ModValues.MatchBy = "FLAG";
-														o.ModValues.ValueFlag = t
-														break;		
-													default:
-														o.ModValues.Value = t;
-												}		
-											}
-											// sdx encapsulate
-											//var sdxDataNode = i2b2.sdx.Master.EncapsulateData('CONCPT',o);
-											if (o.ModValues) {
-												// We do want 2 copies of the Lab Values: one is original from server while the other one is for user manipulation
-												sdxDataNode.ModValues = o.ModValues;
-
-											}
+										sdxDataNode.origData.parent = {};
+										sdxDataNode.origData.parent.key = o.key;
+										//sdxDataNode.origData.parent.LabValues = o.LabValues;
+										sdxDataNode.origData.parent.hasChildren = o.hasChildren;
+										sdxDataNode.origData.parent.level = o.level;
+										sdxDataNode.origData.parent.name = o.name;
+										sdxDataNode.origData.key = i2b2.h.getXNodeVal(pi[i2],'constrain_by_modifier/modifier_key');
+										sdxDataNode.origData.applied_path = i2b2.h.getXNodeVal(pi[i2],'constrain_by_modifier/applied_path');
+										sdxDataNode.origData.name = i2b2.h.getXNodeVal(pi[i2],'constrain_by_modifier/modifier_name');
+										sdxDataNode.origData.isModifier = true;
+										this.hasModifier = true;
+										
+										// Lab Values processing
+										var lvd = i2b2.h.XPath(pi[i2], 'descendant::constrain_by_modifier/constrain_by_value');
+										if (lvd.length>0){
+											lvd = lvd[0];
+											o.ModValues = i2b2.CRC.view.modLabvaluesCtlr.processModValuesForQryLoad(lvd);
+										}
+										if (o.ModValues) {
+											// We do want 2 copies of the Lab Values: one is original from server while the other one is for user manipulation
+											sdxDataNode.ModValues = o.ModValues;
+										}
 										//}
-												
 									}
-									
-									
 									po.items.push(sdxDataNode);
 							//	} else {
 							//		console.error("CRC's ONT Handler could not get term details about '"+ckey+"'!");
 							//	}
-								
 							}
 						}
 						
@@ -577,6 +472,7 @@ function QueryToolController() {
 	this.doQueryRun = function() {
 		// function to build and run query 
 		if (i2b2.CRC.ctrlr.currentQueryStatus != false && i2b2.CRC.ctrlr.currentQueryStatus.isQueryRunning()) { 
+			i2b2.CRC.ctrlr.deleteCurrentQuery.cancelled = true;
 			i2b2.CRC.ctrlr.currentQueryStatus.cancelQuery();
 			i2b2.CRC.ctrlr.currentQueryStatus = false;
 			//alert('A query is already running.\n Please wait until the currently running query has finished.');
@@ -652,7 +548,8 @@ function QueryToolController() {
 	this._queryRun = function(inQueryName, options) {
 		// make sure name is not blank
 		if (inQueryName.blank()) { 
-			alert('Cannot run query with without providing a name!');
+			//alert('Cannot run query with without providing a name!');
+			alert('Please enter a name for this query.');
 			return;
 		}
 	//	if(!options.chk_PRS && !options.chk_PRC  && !options.chk_ENS) {
@@ -1032,7 +929,7 @@ function QueryToolController() {
 								s += '\t\t\t\t\t<modifier_key>' + sdxData.origData.key + '</modifier_key>\n';
 								if (sdxData.ModValues)
 								{
-									s += this.getValues( sdxData.ModValues);
+									s += i2b2.CRC.view.modLabvaluesCtlr.getModLabValuesForXML( sdxData.ModValues);
 								}
 								
 								s += '\t\t\t\t</constrain_by_modifier>\n';					
@@ -1057,9 +954,8 @@ function QueryToolController() {
 								}
 								s += '\t\t\t<item_is_synonym>'+t+'</item_is_synonym>\n';
 								
-							if (sdxData.LabValues) {
-								//s += '\t\t\t<constrain_by_value>\n';
-								s += this.getValues( sdxData.LabValues);
+							if (sdxData.LabValues && !jQuery.isEmptyObject(sdxData.LabValues)) {
+								s += i2b2.CRC.view.modLabvaluesCtlr.getModLabValuesForXML( sdxData.LabValues);
 							}
 							
 						break;
@@ -3291,7 +3187,8 @@ this.queryReport = function(fromPrintButton,queryNameInput,previewQueryOnly)
 						var chart = c3.generate({
 							size: { 
 								width: 800,
-								height: 250
+//								height: 250
+								height: 260 //swc20171027 updated to prevent x-axis label clipping
 							},
 							data: {
 								x: 'x',
@@ -3330,9 +3227,12 @@ this.queryReport = function(fromPrintButton,queryNameInput,previewQueryOnly)
 								x: {
 									type: 'category',
 									tick: {
-										rotate: 25
+//										rotate: 25
+										rotate: -45,//swc20171027 updated to improve readability
+										multiline: false //swc20171027 added to improve readability (prevents random wrapping of labels)
 									},
-									height: 45
+//									height: 45
+									height: 55 //swc20171027 updated to prevent x-axis label clipping
 								},
 								y: {
 									label: {
@@ -3537,7 +3437,8 @@ this.queryReport = function(fromPrintButton,queryNameInput,previewQueryOnly)
 							bindto: '#AllGraphs #' + sDivName,
 							size: { 
 								width: 700,
-								height: 250
+//								height: 250
+								height: 260 //swc20171027 updated to prevent x-axis label clipping
 							},
 							data: {
 								x: 'x',
@@ -3557,9 +3458,12 @@ this.queryReport = function(fromPrintButton,queryNameInput,previewQueryOnly)
 								x: {
 									type: 'category',
 									tick: {
-										rotate: 25
+//										rotate: 25
+										rotate: -45,//swc20171027 updated to improve readability
+										multiline: false //swc20171027 added to improve readability (prevents random wrapping of labels)
 									},
-									height: 45
+//									height: 45
+									height: 55 //swc20171027 updated to prevent x-axis label clipping
 								},
 								y: {
 									label: {
@@ -3675,8 +3579,7 @@ this.queryReport = function(fromPrintButton,queryNameInput,previewQueryOnly)
 	
 	this.PrintQueryTemplate = "<head>"+
 			"<title>Query Report</title>"+
-			// "<script type=\"text/javascript\" src=\"js-i2b2/cells/CRC/CRC_ctrlr_Query_Report.js\"></script>"+
-			"<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>"+
+			//"<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'  type='text/css'>"+
 			"<link rel='stylesheet' TYPE='text/css' href='js-i2b2/cells/CRC/assets/print_query.css'>"+
 			"<link href='js-ext/c3code/c3.css' rel='stylesheet' type='text/css'>"+
 			"</head>"+

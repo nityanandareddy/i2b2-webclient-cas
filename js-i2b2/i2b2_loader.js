@@ -83,7 +83,6 @@ i2b2.hive.tempCellsList = [
 		   roles: [ "DATA_LDS", "DATA_DEID", "DATA_PROT" ],
 		   forceDir: "cells/plugins/community"
 		}		
-
 		
 	];
 // ================================================================================================== //

@@ -124,7 +124,6 @@ i2b2.Dem2Set.getCounts = function(results,which) {
 	}
 
 	// collapse the hash objects to regular objects and save to the Plugin's data model
-
     i2b2.Dem2Set.model.sumCounts[which] = eval("(" + Object.toJSON(hData) + ")");
 
 	if (i2b2.Dem2Set.model.sumCounts[0] && i2b2.Dem2Set.model.sumCounts[1]) {
