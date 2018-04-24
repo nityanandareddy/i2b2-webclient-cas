@@ -214,10 +214,11 @@ i2b2.hive.communicatorFactory = function(cellCode){
 					  retCommObj._defaultCallbackFAIL(o);
 					  /* failure handler code */},
 		};
-		
-		//BG commenting out next command as it makes extra web service call in wrong place
-		// var transaction = YAHOO.util.Connect.asyncRequest(
-				  // 'POST', sProxy_Url, myCallback, commOptions.postBody);
+
+        YAHOO.util.Connect.setDefaultPostHeader(false);
+        YAHOO.util.Connect.initHeader("Content-Type", "text/xml; charset=utf-8",true);
+        var transaction = YAHOO.util.Connect.asyncRequest(
+				  'POST', sProxy_Url, myCallback, commOptions.postBody);
 		
 		if (commOptions.asynchronous) {
 			// perform an ASYNC query 
