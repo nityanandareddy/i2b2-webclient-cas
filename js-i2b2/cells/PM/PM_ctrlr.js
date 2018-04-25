@@ -321,10 +321,8 @@ i2b2.PM.getEurekaClinicalSession = function(url, params) {
 }
 
 i2b2.PM._checkUserAgreement = function(data, successCallback, skipRetry) {
-    if (i2b2.PM.model.EC_USER_AGREEMENT_URL) {
-	i2b2.PM.getEurekaClinicalSession(i2b2.PM.model.EC_USER_AGREEMENT_URL, {
-	    onSuccess: function (response) {
-		new Ajax.Request(i2b2.PM.model.EC_USER_AGREEMENT_URL + '/proxy-resource/useragreementstatuses/me?status=ACTIVE', {
+    if (i2b2.PM.model.EC_I2B2_INTEGRATION_URL && i2b2.PM.model.EC_USER_AGREEMENT_URL) {
+		new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/proxy-resource/useragreementstatuses/me?status=ACTIVE', {
 		    method: 'get',
 		    contentType: 'application/json',
 		    onSuccess: function (response) {
@@ -351,12 +349,6 @@ i2b2.PM._checkUserAgreement = function(data, successCallback, skipRetry) {
 			}
 		    }
 		});
-	    },
-	    onFailure: function (response) {
-		i2b2.PM._processUserConfigFailure();
-	    }
-	})
-	
     }
 }
 
@@ -391,8 +383,6 @@ i2b2.PM._processUserConfig = function (data) {
 	        if (!i2b2.PM.model.EC_I2B2_INTEGRATION_URL) {
 		    i2b2.PM._processUserConfigFailure();
 		} else {
-		    i2b2.PM.getEurekaClinicalSession(i2b2.PM.model.EC_I2B2_INTEGRATION_URL, {
-			onSuccess: function (response) {
 			    new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/proxy-resource/users/auto', {
 				method: 'get',
 				contentType: 'application/json',
@@ -425,12 +415,6 @@ i2b2.PM._processUserConfig = function (data) {
 				    i2b2.PM._processUserConfigFailure();
 				}
 			    });
-			},
-			onFailure: function (response) {
-			    i2b2.PM._processUserConfigFailure();
-			}
-		    });
-	            
 		}
 	        return false;
 	    case 'EINTERNAL':
