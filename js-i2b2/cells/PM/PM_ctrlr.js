@@ -449,10 +449,9 @@ i2b2.PM._processUserConfig = function (data) {
 // ================================================================================================== //
 i2b2.PM.doLogout = function() {
     i2b2.PM._destroyEurekaClinicalSessions(function() {
-	if (undefined != i2b2.PM.model.EC_I2B2_INTEGRATION_URL) {
-	    eraseCookie("JSESSIONID");
+	if (i2b2.PM.model.CAS_SERVER) {
 	    if (i2b2.PM.model.CAS_LOGOUT_TYPE === 'CAS') {
-		window.location=i2b2.PM.model.EC_I2B2_INTEGRATION_URL + "/logout";
+		window.location=i2b2.PM.model.CAS_SERVER + "/logout";
                 return;
 	    }
 	}

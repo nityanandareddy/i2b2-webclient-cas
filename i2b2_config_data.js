@@ -11,6 +11,7 @@
 		  allowAnalysis: true,
 		  debug: false,
 		  "EC_I2B2_INTEGRATION_URL": "https://localhost:8443/eurekaclinical-i2b2-integration-webapp"
+		  "CAS_SERVER": "https://localhost:8443/cas-server"
 		}
 	]
 	//-------------------------------------------------------------------------------------------
