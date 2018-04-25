@@ -67,7 +67,7 @@ i2b2.PM.doCASLogin = function() {
         alert('login failed: no such domain in i2b2 config: ' + domainname);
         return;
     }
-    casloginCheck(domain.CAS_server, domain);
+    casloginCheck(domain.EC_I2B2_INTEGRATION_URL, domain);
 
 };
 
@@ -80,7 +80,6 @@ function afterCaslogin(domain)
         return;
     }
 */
-    i2b2.PM.model.CAS_server = domain.CAS_server;
     i2b2.PM.model.EC_I2B2_INTEGRATION_URL = domain.EC_I2B2_INTEGRATION_URL;
     i2b2.PM.model.EC_USER_AGREEMENT_URL = domain.EC_USER_AGREEMENT_URL;
     i2b2.PM.model.CAS_LOGOUT_TYPE = domain.CAS_LOGOUT_TYPE;
