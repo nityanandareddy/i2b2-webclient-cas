@@ -26,7 +26,6 @@ if (undefined==i2b2.PM) { i2b2.PM = {}; }
 
 i2b2.PM.doCASLogin = function() {
     var domainname = i2b2.h.getJsonConfig('i2b2_config_data.js').casDomain
-    alert(domainname);
 
         var login_password = i2b2.PM.model.login_password ? i2b2.PM.model.login_password : null;
 
