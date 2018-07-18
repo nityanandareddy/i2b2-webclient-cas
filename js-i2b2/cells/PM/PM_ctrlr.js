@@ -383,10 +383,6 @@ i2b2.PM._processUserConfig = function (data) {
 	        if (!i2b2.PM.model.EC_I2B2_INTEGRATION_URL) {
 		    i2b2.PM._processUserConfigFailure();
 		} else {
-			    new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/proxy-resource/users/auto', {
-				method: 'get',
-				contentType: 'application/json',
-				onSuccess: function (response) {
 				    if (!i2b2.PM.model.EC_USER_AGREEMENT_URL) {
 					new Ajax.Request(i2b2.PM.model.EC_I2B2_INTEGRATION_URL + '/proxy-resource/i2b2users/auto', {
 					    method: 'post',
@@ -409,12 +405,7 @@ i2b2.PM._processUserConfig = function (data) {
 						}
 					    });
 					});
-				    }
-				},
-				onFailure: function (response) {
-				    i2b2.PM._processUserConfigFailure();
-				}
-			    });
+                    } 
 		}
 	        return false;
 	    case 'EINTERNAL':
