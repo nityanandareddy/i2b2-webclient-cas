@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8d1b3ee9-76f3-4909-82eb-6721a67b8cc3" name="Default" comment="change for proxy">
+      <change beforePath="$PROJECT_DIR$/.project" afterPath="$PROJECT_DIR$/.project" />
+      <change beforePath="$PROJECT_DIR$/INSTALL-README.md" afterPath="$PROJECT_DIR$/INSTALL-README.md" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/open-sans-v13-latin-regular.svg" afterPath="$PROJECT_DIR$/assets/fonts/open-sans-v13-latin-regular.svg" />
+      <change beforePath="$PROJECT_DIR$/assets/help_viewer.css" afterPath="$PROJECT_DIR$/assets/help_viewer.css" />
+      <change beforePath="$PROJECT_DIR$/assets/i2b2-NEW.css" afterPath="$PROJECT_DIR$/assets/i2b2-NEW.css" />
+      <change beforePath="$PROJECT_DIR$/assets/i2b2.css" afterPath="$PROJECT_DIR$/assets/i2b2.css" />
+      <change beforePath="$PROJECT_DIR$/assets/jquery.qtip.min.css" afterPath="$PROJECT_DIR$/assets/jquery.qtip.min.css" />
+      <change beforePath="$PROJECT_DIR$/assets/mod-treeview.css" afterPath="$PROJECT_DIR$/assets/mod-treeview.css" />
+      <change beforePath="$PROJECT_DIR$/assets/msg-viewer.html" afterPath="$PROJECT_DIR$/assets/msg-viewer.html" />
+      <change beforePath="$PROJECT_DIR$/assets/msg_sniffer.css" afterPath="$PROJECT_DIR$/assets/msg_sniffer.css" />
+      <change beforePath="$PROJECT_DIR$/assets/msg_snifferIE6.css" afterPath="$PROJECT_DIR$/assets/msg_snifferIE6.css" />
+      <change beforePath="$PROJECT_DIR$/assets/new-treeview.css" afterPath="$PROJECT_DIR$/assets/new-treeview.css" />
+      <change beforePath="$PROJECT_DIR$/assets/tree.css" afterPath="$PROJECT_DIR$/assets/tree.css" />
+      <change beforePath="$PROJECT_DIR$/cas_login.html" afterPath="$PROJECT_DIR$/cas_login.html" />
+      <change beforePath="$PROJECT_DIR$/default.htm" afterPath="$PROJECT_DIR$/default.htm" />
+      <change beforePath="$PROJECT_DIR$/help/admin.htm" afterPath="$PROJECT_DIR$/help/admin.htm" />
+      <change beforePath="$PROJECT_DIR$/help/assets/help.css" afterPath="$PROJECT_DIR$/help/assets/help.css" />
+      <change beforePath="$PROJECT_DIR$/help/content.html" afterPath="$PROJECT_DIR$/help/content.html" />
+      <change beforePath="$PROJECT_DIR$/help/default.htm" afterPath="$PROJECT_DIR$/help/default.htm" />
+      <change beforePath="$PROJECT_DIR$/help/ft.html" afterPath="$PROJECT_DIR$/help/ft.html" />
+      <change beforePath="$PROJECT_DIR$/help/i2b2Style.css" afterPath="$PROJECT_DIR$/help/i2b2Style.css" />
+      <change beforePath="$PROJECT_DIR$/help/navTerms.html" afterPath="$PROJECT_DIR$/help/navTerms.html" />
+      <change beforePath="$PROJECT_DIR$/help/pq.html" afterPath="$PROJECT_DIR$/help/pq.html" />
+      <change beforePath="$PROJECT_DIR$/help/qt.html" afterPath="$PROJECT_DIR$/help/qt.html" />
+      <change beforePath="$PROJECT_DIR$/help/toc.html" afterPath="$PROJECT_DIR$/help/toc.html" />
+      <change beforePath="$PROJECT_DIR$/help/tqt.html" afterPath="$PROJECT_DIR$/help/tqt.html" />
+      <change beforePath="$PROJECT_DIR$/help/wp.html" afterPath="$PROJECT_DIR$/help/wp.html" />
+      <change beforePath="$PROJECT_DIR$/i2b2 license 2.1-1159.txt" afterPath="$PROJECT_DIR$/i2b2 license 2.1-1159.txt" />
+      <change beforePath="$PROJECT_DIR$/i2b2_config_data.js" afterPath="$PROJECT_DIR$/i2b2_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change beforePath="$PROJECT_DIR$/js-ext/YUI_DataTable_MD5CellEditor.js" afterPath="$PROJECT_DIR$/js-ext/YUI_DataTable_MD5CellEditor.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/YUI_DataTable_PasswordCellEditor.js" afterPath="$PROJECT_DIR$/js-ext/YUI_DataTable_PasswordCellEditor.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/accordion-min.js" afterPath="$PROJECT_DIR$/js-ext/accordion-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/bubbling-min.js" afterPath="$PROJECT_DIR$/js-ext/bubbling-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/c3code/c3.css" afterPath="$PROJECT_DIR$/js-ext/c3code/c3.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/c3code/c3.js" afterPath="$PROJECT_DIR$/js-ext/c3code/c3.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/d3code/d3.v3.js" afterPath="$PROJECT_DIR$/js-ext/d3code/d3.v3.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/excanvas-License.txt" afterPath="$PROJECT_DIR$/js-ext/excanvas-License.txt" />
+      <change beforePath="$PROJECT_DIR$/js-ext/excanvas.js" afterPath="$PROJECT_DIR$/js-ext/excanvas.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/firebug-License.txt" afterPath="$PROJECT_DIR$/js-ext/firebug-License.txt" />
+      <change beforePath="$PROJECT_DIR$/js-ext/firebug/firebug-lite-compressed.js" afterPath="$PROJECT_DIR$/js-ext/firebug/firebug-lite-compressed.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/firebug/firebug-lite.css" afterPath="$PROJECT_DIR$/js-ext/firebug/firebug-lite.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/firebug/firebug-lite.js" afterPath="$PROJECT_DIR$/js-ext/firebug/firebug-lite.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/firebug/firebugx.js" afterPath="$PROJECT_DIR$/js-ext/firebug/firebugx.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/idle-timer.js" afterPath="$PROJECT_DIR$/js-ext/idle-timer.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquery.qtip.min.js" afterPath="$PROJECT_DIR$/js-ext/jquery.qtip.min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation.htm" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation.htm" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/ados" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/ados" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/base.css" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/base.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/d.css" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/d.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/ga.js" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/ga.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/jquery.js" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/jquery.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/main.js" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/main.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/modernizr.js" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/modernizr.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/plugins.js" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/plugins.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/style.css" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/style.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/wde1aof.js" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jQuery.noConflict() _ jQuery API Documentation_files/wde1aof.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jquery-1.11.1.js" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jquery-1.11.1.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jquery-1.11.1.min.js" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jquery-1.11.1.min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jquery-1.11.3.min.js" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jquery-1.11.3.min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jquery-ui.min.js" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jquery-ui.min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/jquerycode/jquery.layout-latest.js" afterPath="$PROJECT_DIR$/js-ext/jquerycode/jquery.layout-latest.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/moment.min.js" afterPath="$PROJECT_DIR$/js-ext/moment.min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/prototype-License.txt" afterPath="$PROJECT_DIR$/js-ext/prototype-License.txt" />
+      <change beforePath="$PROJECT_DIR$/js-ext/prototype.js" afterPath="$PROJECT_DIR$/js-ext/prototype.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui-License.txt" afterPath="$PROJECT_DIR$/js-ext/yui-License.txt" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/README" afterPath="$PROJECT_DIR$/js-ext/yui/README" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/animation/animation-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/animation/animation-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/animation/animation-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/animation/animation-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/animation/animation.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/animation/animation.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/autocomplete.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/autocomplete.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/button.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/button.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/calendar.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/calendar.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/carousel.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/carousel.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/colorpicker.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/colorpicker.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/container.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/container.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/datatable.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/datatable.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/editor.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/editor.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/imagecropper.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/imagecropper.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/layout.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/layout.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/logger.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/logger.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/menu.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/menu.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/paginator.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/paginator.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/profilerviewer.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/profilerviewer.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/progressbar.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/progressbar.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/resize.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/resize.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/simpleeditor.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/simpleeditor.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/slider.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/slider.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/tabview.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/tabview.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/treeview.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/treeview.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/yuitest.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/assets/skins/sam/yuitest.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/autocomplete/assets/autocomplete-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/autocomplete/assets/autocomplete-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/autocomplete/assets/skins/sam/autocomplete-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/autocomplete/assets/skins/sam/autocomplete-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/autocomplete/assets/skins/sam/autocomplete.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/autocomplete/assets/skins/sam/autocomplete.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/autocomplete/autocomplete-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/autocomplete/autocomplete-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/autocomplete/autocomplete-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/autocomplete/autocomplete-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/autocomplete/autocomplete.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/autocomplete/autocomplete.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/base/base-min.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/base/base-min.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/base/base.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/base/base.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/button/assets/button-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/button/assets/button-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/button/assets/skins/sam/button-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/button/assets/skins/sam/button-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/button/assets/skins/sam/button.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/button/assets/skins/sam/button.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/button/button-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/button/button-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/button/button-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/button/button-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/button/button.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/button/button.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/calendar/assets/calendar-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/calendar/assets/calendar-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/calendar/assets/calendar.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/calendar/assets/calendar.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/calendar/assets/skins/sam/calendar-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/calendar/assets/skins/sam/calendar-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/calendar/assets/skins/sam/calendar.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/calendar/assets/skins/sam/calendar.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/calendar/calendar-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/calendar/calendar-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/calendar/calendar-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/calendar/calendar-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/calendar/calendar.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/calendar/calendar.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/carousel/assets/carousel-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/carousel/assets/carousel-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/carousel/assets/skins/sam/carousel-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/carousel/assets/skins/sam/carousel-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/carousel/assets/skins/sam/carousel.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/carousel/assets/skins/sam/carousel.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/carousel/carousel-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/carousel/carousel-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/carousel/carousel-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/carousel/carousel-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/carousel/carousel.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/carousel/carousel.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/charts/charts-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/charts/charts-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/charts/charts-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/charts/charts-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/charts/charts.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/charts/charts.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/colorpicker/assets/colorpicker-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/colorpicker/assets/colorpicker-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/colorpicker/assets/skins/sam/colorpicker-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/colorpicker/assets/skins/sam/colorpicker-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/colorpicker/assets/skins/sam/colorpicker.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/colorpicker/assets/skins/sam/colorpicker.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/colorpicker/colorpicker-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/colorpicker/colorpicker-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/colorpicker/colorpicker-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/colorpicker/colorpicker-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/colorpicker/colorpicker.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/colorpicker/colorpicker.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/connection/connection-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/connection/connection-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/connection/connection-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/connection/connection-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/connection/connection.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/connection/connection.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/connection/connection_core-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/connection/connection_core-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/connection/connection_core-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/connection/connection_core-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/connection/connection_core.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/connection/connection_core.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/container/assets/container-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/container/assets/container-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/container/assets/container.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/container/assets/container.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/container/assets/skins/sam/container-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/container/assets/skins/sam/container-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/container/assets/skins/sam/container.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/container/assets/skins/sam/container.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/container/container-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/container/container-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/container/container-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/container/container-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/container/container.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/container/container.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/container/container_core-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/container/container_core-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/container/container_core-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/container/container_core-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/container/container_core.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/container/container_core.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/cookie/cookie-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/cookie/cookie-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/cookie/cookie-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/cookie/cookie-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/cookie/cookie.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/cookie/cookie.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datasource/datasource-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/datasource/datasource-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datasource/datasource-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/datasource/datasource-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datasource/datasource.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/datasource/datasource.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datatable/assets/datatable-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/datatable/assets/datatable-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datatable/assets/datatable.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/datatable/assets/datatable.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datatable/assets/skins/sam/datatable-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/datatable/assets/skins/sam/datatable-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datatable/assets/skins/sam/datatable.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/datatable/assets/skins/sam/datatable.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datatable/datatable-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/datatable/datatable-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datatable/datatable-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/datatable/datatable-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datatable/datatable.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/datatable/datatable.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datemath/datemath-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/datemath/datemath-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datemath/datemath-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/datemath/datemath-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/datemath/datemath.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/datemath/datemath.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/dom/dom-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/dom/dom-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/dom/dom-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/dom/dom-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/dom/dom.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/dom/dom.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/dragdrop/dragdrop-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/dragdrop/dragdrop-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/dragdrop/dragdrop-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/dragdrop/dragdrop-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/dragdrop/dragdrop.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/dragdrop/dragdrop.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/editor/assets/editor-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/editor/assets/editor-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/editor/assets/simpleeditor-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/editor/assets/simpleeditor-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/editor/assets/skins/sam/editor-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/editor/assets/skins/sam/editor-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/editor/assets/skins/sam/editor.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/editor/assets/skins/sam/editor.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/editor/assets/skins/sam/simpleeditor-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/editor/assets/skins/sam/simpleeditor-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/editor/assets/skins/sam/simpleeditor.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/editor/assets/skins/sam/simpleeditor.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/editor/editor-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/editor/editor-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/editor/editor-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/editor/editor-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/editor/editor.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/editor/editor.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/editor/simpleeditor-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/editor/simpleeditor-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/editor/simpleeditor-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/editor/simpleeditor-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/editor/simpleeditor.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/editor/simpleeditor.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/element-delegate/element-delegate-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/element-delegate/element-delegate-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/element-delegate/element-delegate-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/element-delegate/element-delegate-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/element-delegate/element-delegate.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/element-delegate/element-delegate.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/element/element-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/element/element-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/element/element-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/element/element-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/element/element.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/element/element.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/event-delegate/event-delegate-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/event-delegate/event-delegate-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/event-delegate/event-delegate-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/event-delegate/event-delegate-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/event-delegate/event-delegate.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/event-delegate/event-delegate.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/event-mouseenter/event-mouseenter-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/event-mouseenter/event-mouseenter-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/event-mouseenter/event-mouseenter-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/event-mouseenter/event-mouseenter-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/event-mouseenter/event-mouseenter.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/event-mouseenter/event-mouseenter.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/event-simulate/event-simulate-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/event-simulate/event-simulate-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/event-simulate/event-simulate-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/event-simulate/event-simulate-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/event-simulate/event-simulate.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/event-simulate/event-simulate.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/event/event-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/event/event-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/event/event-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/event/event-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/event/event.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/event/event.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/fonts/fonts-min.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/fonts/fonts-min.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/fonts/fonts.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/fonts/fonts.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/get/get-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/get/get-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/get/get-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/get/get-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/get/get.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/get/get.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/grids/grids-min.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/grids/grids-min.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/grids/grids.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/grids/grids.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/history/history-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/history/history-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/history/history-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/history/history-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/history/history.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/history/history.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/imagecropper/assets/imagecropper-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/imagecropper/assets/imagecropper-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/imagecropper/assets/skins/sam/imagecropper-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/imagecropper/assets/skins/sam/imagecropper-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/imagecropper/assets/skins/sam/imagecropper.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/imagecropper/assets/skins/sam/imagecropper.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/imagecropper/imagecropper-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/imagecropper/imagecropper-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/imagecropper/imagecropper-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/imagecropper/imagecropper-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/imagecropper/imagecropper.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/imagecropper/imagecropper.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/imageloader/imageloader-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/imageloader/imageloader-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/imageloader/imageloader-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/imageloader/imageloader-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/imageloader/imageloader.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/imageloader/imageloader.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/json/json-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/json/json-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/json/json-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/json/json-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/json/json.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/json/json.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/layout/assets/layout-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/layout/assets/layout-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/layout/assets/skins/sam/layout-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/layout/assets/skins/sam/layout-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/layout/assets/skins/sam/layout.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/layout/assets/skins/sam/layout.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/layout/layout-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/layout/layout-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/layout/layout-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/layout/layout-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/layout/layout.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/layout/layout.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/logger/assets/logger-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/logger/assets/logger-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/logger/assets/logger.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/logger/assets/logger.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/logger/assets/skins/sam/logger-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/logger/assets/skins/sam/logger-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/logger/assets/skins/sam/logger.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/logger/assets/skins/sam/logger.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/logger/logger-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/logger/logger-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/logger/logger-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/logger/logger-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/logger/logger.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/logger/logger.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/menu/assets/menu-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/menu/assets/menu-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/menu/assets/menu.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/menu/assets/menu.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/menu/assets/skins/sam/menu-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/menu/assets/skins/sam/menu-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/menu/assets/skins/sam/menu.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/menu/assets/skins/sam/menu.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/menu/menu-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/menu/menu-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/menu/menu-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/menu/menu-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/menu/menu.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/menu/menu.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/paginator/assets/paginator-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/paginator/assets/paginator-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/paginator/assets/skins/sam/paginator-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/paginator/assets/skins/sam/paginator-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/paginator/assets/skins/sam/paginator.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/paginator/assets/skins/sam/paginator.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/paginator/paginator-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/paginator/paginator-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/paginator/paginator-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/paginator/paginator-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/paginator/paginator.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/paginator/paginator.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/profiler/profiler-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/profiler/profiler-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/profiler/profiler-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/profiler/profiler-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/profiler/profiler.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/profiler/profiler.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/profilerviewer/assets/profilerviewer-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/profilerviewer/assets/profilerviewer-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/profilerviewer/assets/skins/sam/profilerviewer-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/profilerviewer/assets/skins/sam/profilerviewer-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/profilerviewer/assets/skins/sam/profilerviewer.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/profilerviewer/assets/skins/sam/profilerviewer.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/profilerviewer/profilerviewer-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/profilerviewer/profilerviewer-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/profilerviewer/profilerviewer-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/profilerviewer/profilerviewer-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/profilerviewer/profilerviewer.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/profilerviewer/profilerviewer.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/progressbar/assets/progressbar-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/progressbar/assets/progressbar-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/progressbar/assets/skins/sam/progressbar-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/progressbar/assets/skins/sam/progressbar-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/progressbar/assets/skins/sam/progressbar.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/progressbar/assets/skins/sam/progressbar.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/progressbar/progressbar-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/progressbar/progressbar-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/progressbar/progressbar-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/progressbar/progressbar-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/progressbar/progressbar.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/progressbar/progressbar.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/reset-fonts-grids/reset-fonts-grids.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/reset-fonts-grids/reset-fonts-grids.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/reset-fonts/reset-fonts.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/reset-fonts/reset-fonts.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/reset/reset-min.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/reset/reset-min.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/reset/reset.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/reset/reset.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/resize/assets/resize-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/resize/assets/resize-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/resize/assets/skins/sam/resize-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/resize/assets/skins/sam/resize-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/resize/assets/skins/sam/resize.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/resize/assets/skins/sam/resize.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/resize/resize-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/resize/resize-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/resize/resize-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/resize/resize-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/resize/resize.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/resize/resize.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/selector/selector-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/selector/selector-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/selector/selector-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/selector/selector-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/selector/selector.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/selector/selector.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/slider/assets/skins/sam/slider-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/slider/assets/skins/sam/slider-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/slider/assets/skins/sam/slider.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/slider/assets/skins/sam/slider.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/slider/assets/slider-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/slider/assets/slider-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/slider/assets/slider-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/slider/assets/slider-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/slider/slider-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/slider/slider-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/slider/slider-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/slider/slider-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/slider/slider.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/slider/slider.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/storage/storage-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/storage/storage-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/storage/storage-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/storage/storage-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/storage/storage.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/storage/storage.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/stylesheet/stylesheet-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/stylesheet/stylesheet-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/stylesheet/stylesheet-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/stylesheet/stylesheet-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/stylesheet/stylesheet.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/stylesheet/stylesheet.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/swf/swf-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/swf/swf-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/swf/swf-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/swf/swf-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/swf/swf.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/swf/swf.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/swfdetect/swfdetect-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/swfdetect/swfdetect-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/swfdetect/swfdetect-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/swfdetect/swfdetect-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/swfdetect/swfdetect.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/swfdetect/swfdetect.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/swfstore/swf.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/swfstore/swf.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/swfstore/swfstore-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/swfstore/swfstore-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/swfstore/swfstore-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/swfstore/swfstore-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/swfstore/swfstore.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/swfstore/swfstore.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/tabview/assets/border_tabs.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/tabview/assets/border_tabs.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/tabview/assets/skin-sam.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/tabview/assets/skin-sam.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/tabview/assets/skins/sam/tabview-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/tabview/assets/skins/sam/tabview-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/tabview/assets/skins/sam/tabview.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/tabview/assets/skins/sam/tabview.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/tabview/assets/tabview-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/tabview/assets/tabview-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/tabview/assets/tabview.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/tabview/assets/tabview.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/tabview/tabview-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/tabview/tabview-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/tabview/tabview-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/tabview/tabview-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/tabview/tabview.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/tabview/tabview.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/treeview/assets/skins/sam/treeview-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/treeview/assets/skins/sam/treeview-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/treeview/assets/skins/sam/treeview.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/treeview/assets/skins/sam/treeview.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/treeview/assets/treeview-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/treeview/assets/treeview-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/treeview/treeview-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/treeview/treeview-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/treeview/treeview-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/treeview/treeview-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/treeview/treeview.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/treeview/treeview.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/uploader/uploader-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/uploader/uploader-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/uploader/uploader-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/uploader/uploader-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/uploader/uploader.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/uploader/uploader.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/utilities/utilities.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/utilities/utilities.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yahoo-dom-event/yahoo-dom-event.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yahoo-dom-event/yahoo-dom-event.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yahoo/yahoo-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yahoo/yahoo-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yahoo/yahoo-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yahoo/yahoo-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yahoo/yahoo.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yahoo/yahoo.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuiloader-dom-event/yuiloader-dom-event.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuiloader-dom-event/yuiloader-dom-event.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuiloader/yuiloader-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuiloader/yuiloader-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuiloader/yuiloader-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuiloader/yuiloader-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuiloader/yuiloader.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuiloader/yuiloader.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuitest/assets/skins/sam/yuitest-skin.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuitest/assets/skins/sam/yuitest-skin.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuitest/assets/skins/sam/yuitest.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuitest/assets/skins/sam/yuitest.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuitest/assets/testlogger.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuitest/assets/testlogger.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuitest/assets/yuitest-core.css" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuitest/assets/yuitest-core.css" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuitest/yuitest-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuitest/yuitest-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuitest/yuitest-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuitest/yuitest-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuitest/yuitest.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuitest/yuitest.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuitest/yuitest_core-debug.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuitest/yuitest_core-debug.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuitest/yuitest_core-min.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuitest/yuitest_core-min.js" />
+      <change beforePath="$PROJECT_DIR$/js-ext/yui/build/yuitest/yuitest_core.js" afterPath="$PROJECT_DIR$/js-ext/yui/build/yuitest/yuitest_core.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_ctrlr_Dates.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_ctrlr_Dates.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_ctrlr_Find.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_ctrlr_Find.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_ctrlr_History.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_ctrlr_History.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_ctrlr_QryPanel.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_ctrlr_QryPanel.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_ctrlr_QryStatus.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_ctrlr_QryStatus.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_ctrlr_QryTool.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_ctrlr_QryTool.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_ENS.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_ENS.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_PR.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_PR.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_PRC.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_PRC.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_PRS.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_PRS.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_QDEF.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_QDEF.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_QGDEF.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_QGDEF.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_QI.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_QI.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_QM.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_sdx_QM.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_Find.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_Find.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_Graphs.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_Graphs.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_History.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_History.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_QryTool.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_QryTool.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_QueryReport.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_QueryReport.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_Status.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_Status.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_modLabRange.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/CRC_view_modLabRange.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/main_list.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/main_list.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/menu.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/menu.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/modLabValues.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/modLabValues.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/print_query.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/print_query.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/query_report.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/query_report.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_PR.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_PR.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_PRC.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_PRC.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_PRS.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_PRS.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_QDEF.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_QDEF.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_QGDEF.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_QGDEF.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_QI.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_QI.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_QM.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/sdx_CRC_QM.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/vwHistory.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/vwHistory.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/vwQryTool.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/vwQryTool.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/vwStatus.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/assets/vwStatus.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/cell_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/cell_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/CRC/i2b2_msgs.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/CRC/i2b2_msgs.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/ONT/ONT_ctrlr_FindBy.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/ONT/ONT_ctrlr_FindBy.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/ONT/ONT_ctrlr_general.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/ONT/ONT_ctrlr_general.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/ONT/ONT_sdx_CONCPT.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/ONT/ONT_sdx_CONCPT.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/ONT/ONT_view_Find.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/ONT/ONT_view_Find.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/ONT/ONT_view_Main.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/ONT/ONT_view_Main.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/ONT/ONT_view_Nav.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/ONT/ONT_view_Nav.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/ONT/assets/main_list.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/ONT/assets/main_list.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/ONT/assets/ontMain.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/ONT/assets/ontMain.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/ONT/assets/sdx_ONT_CONCPT.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/ONT/assets/sdx_ONT_CONCPT.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/ONT/cell_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/ONT/cell_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/ONT/i2b2_msgs.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/ONT/i2b2_msgs.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/PLUGINMGR_ctrlr_general.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/PLUGINMGR_ctrlr_general.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/PLUGINMGR_view_PlugView.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/PLUGINMGR_view_PlugView.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/PLUGINMGR_view_list.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/PLUGINMGR_view_list.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/assets/main_list.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/assets/main_list.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/assets/vwList.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/assets/vwList.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/assets/vwViewer.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/assets/vwViewer.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/cell_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/PLUGINMGR/cell_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PM/PM_admin_ctrlr.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/PM/PM_admin_ctrlr.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PM/PM_admin_view.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/PM/PM_admin_view.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PM/PM_ctrlr.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/PM/PM_ctrlr.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PM/PM_misc.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/PM/PM_misc.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PM/PM_view.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/PM/PM_view.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PM/assets/modProjects.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/PM/assets/modProjects.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PM/cas_login.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/PM/cas_login.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PM/cell_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/PM/cell_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/PM/i2b2_msgs.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/PM/i2b2_msgs.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/WORK/WORK_ctrlr_general.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/WORK/WORK_ctrlr_general.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/WORK/WORK_sdx_WRK.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/WORK/WORK_sdx_WRK.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/WORK/WORK_sdx_XML.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/WORK/WORK_sdx_XML.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/WORK/WORK_view.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/WORK/WORK_view.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/WORK/assets/main_list.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/WORK/assets/main_list.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/WORK/assets/sdx_WORK_XML.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/WORK/assets/sdx_WORK_XML.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/WORK/assets/vwWork.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/WORK/assets/vwWork.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/WORK/cell_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/WORK/cell_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/WORK/i2b2_msgs.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/WORK/i2b2_msgs.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/CAREcncptDem.manifest" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/CAREcncptDem.manifest" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/CAREcncptDem_ctrlr.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/CAREcncptDem_ctrlr.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/README.md" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/README.md" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/assets/SaveToCSV.php" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/assets/SaveToCSV.php" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/assets/SaveToHTMLXLS.php" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/assets/SaveToHTMLXLS.php" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/assets/injected_screens.html" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/assets/injected_screens.html" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/assets/vwCAREcncptDem.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/assets/vwCAREcncptDem.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/cell_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREcncptDem/cell_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/CAREobsTally.manifest" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/CAREobsTally.manifest" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/CAREobsTally_ctrlr.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/CAREobsTally_ctrlr.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/README.md" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/README.md" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/assets/SaveToCSV.php" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/assets/SaveToCSV.php" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/assets/SaveToHTMLXLS.php" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/assets/SaveToHTMLXLS.php" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/assets/injected_screens.html" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/assets/injected_screens.html" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/assets/vwCAREobsTally.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/assets/vwCAREobsTally.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/cell_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/CAREobsTally/cell_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/ExportXLS.manifest" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/ExportXLS.manifest" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/ExportXLS_ctrlr.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/ExportXLS_ctrlr.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/README.md" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/README.md" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/assets/SaveToCSV.php" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/assets/SaveToCSV.php" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/assets/SaveToHTMLXLS.php" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/assets/SaveToHTMLXLS.php" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/assets/injected_screens.html" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/assets/injected_screens.html" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/assets/vwExportXLS.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/assets/vwExportXLS.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/cell_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/ExportXLS/cell_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/WISEsearcher/README.md" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/WISEsearcher/README.md" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/WISEsearcher/WISEsearcher.manifest" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/WISEsearcher/WISEsearcher.manifest" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/WISEsearcher/assets/Save2Csv.php" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/WISEsearcher/assets/Save2Csv.php" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/WISEsearcher/assets/SaveToExcel.php" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/WISEsearcher/assets/SaveToExcel.php" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/WISEsearcher/assets/vwWISEsearcher.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/WISEsearcher/assets/vwWISEsearcher.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/WISEsearcher/cell_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/community/WISEsearcher/cell_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem1Set/Dem1Set_ctrlr.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem1Set/Dem1Set_ctrlr.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem1Set/assets/injected_screens.html" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem1Set/assets/injected_screens.html" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem1Set/assets/vwDem1Set.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem1Set/assets/vwDem1Set.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem1Set/cell_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem1Set/cell_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem2Set/Dem2Set_ctrlr.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem2Set/Dem2Set_ctrlr.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem2Set/assets/injected_screens.html" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem2Set/assets/injected_screens.html" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem2Set/assets/vwDem2Set.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem2Set/assets/vwDem2Set.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem2Set/cell_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Dem2Set/cell_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Timeline/Timeline_ctrlr.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Timeline/Timeline_ctrlr.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Timeline/Timeline_modLabRange.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Timeline/Timeline_modLabRange.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Timeline/assets/injected_screens.html" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Timeline/assets/injected_screens.html" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Timeline/assets/vwTimeline.css" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Timeline/assets/vwTimeline.css" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Timeline/cell_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/cells/plugins/standard/Timeline/cell_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/hive/help_viewer.js" afterPath="$PROJECT_DIR$/js-i2b2/hive/help_viewer.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/hive/hive.ui.js" afterPath="$PROJECT_DIR$/js-i2b2/hive/hive.ui.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/hive/hive_SDX.js" afterPath="$PROJECT_DIR$/js-i2b2/hive/hive_SDX.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/hive/hive_config_data.js" afterPath="$PROJECT_DIR$/js-i2b2/hive/hive_config_data.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/hive/hive_globals.js" afterPath="$PROJECT_DIR$/js-i2b2/hive/hive_globals.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/hive/hive_helpers.js" afterPath="$PROJECT_DIR$/js-i2b2/hive/hive_helpers.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/hive/i2b2_cell_communicator.js" afterPath="$PROJECT_DIR$/js-i2b2/hive/i2b2_cell_communicator.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/hive/master_view_ctrlr.js" afterPath="$PROJECT_DIR$/js-i2b2/hive/master_view_ctrlr.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/hive/msg_sniffer.js" afterPath="$PROJECT_DIR$/js-i2b2/hive/msg_sniffer.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/i2b2_loader.js" afterPath="$PROJECT_DIR$/js-i2b2/i2b2_loader.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/i2b2_ui_config.js" afterPath="$PROJECT_DIR$/js-i2b2/i2b2_ui_config.js" />
+      <change beforePath="$PROJECT_DIR$/js-i2b2/ui.styles/ui.styles.css" afterPath="$PROJECT_DIR$/js-i2b2/ui.styles/ui.styles.css" />
+      <change beforePath="$PROJECT_DIR$/plugin_installer/README.md" afterPath="$PROJECT_DIR$/plugin_installer/README.md" />
+      <change beforePath="$PROJECT_DIR$/plugin_installer/admin.php" afterPath="$PROJECT_DIR$/plugin_installer/admin.php" />
+      <change beforePath="$PROJECT_DIR$/plugin_installer/config.php" afterPath="$PROJECT_DIR$/plugin_installer/config.php" />
+      <change beforePath="$PROJECT_DIR$/plugin_installer/helper.php" afterPath="$PROJECT_DIR$/plugin_installer/helper.php" />
+      <change beforePath="$PROJECT_DIR$/plugin_installer/install.php" afterPath="$PROJECT_DIR$/plugin_installer/install.php" />
+      <change beforePath="$PROJECT_DIR$/plugin_installer/installConfirm.php" afterPath="$PROJECT_DIR$/plugin_installer/installConfirm.php" />
+      <change beforePath="$PROJECT_DIR$/plugin_installer/style.css" afterPath="$PROJECT_DIR$/plugin_installer/style.css" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="i2b2_config_data.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/i2b2_config_data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="82" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cas_login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cas_login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="481">
+              <caret line="37" column="27" lean-forward="true" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.htm" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/default.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3910">
+              <caret line="230" column="52" lean-forward="false" selection-start-line="230" selection-start-column="52" selection-end-line="230" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hive_globals.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js-i2b2/hive/hive_globals.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cas_login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/cas_login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3077">
+              <caret line="192" column="64" lean-forward="false" selection-start-line="192" selection-start-column="64" selection-end-line="192" selection-end-column="64" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="install.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plugin_installer/install.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="75" column="17" lean-forward="false" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="i2b2_msgs.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/i2b2_msgs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="i2b2_cell_communicator.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js-i2b2/hive/i2b2_cell_communicator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4165">
+              <caret line="245" column="53" lean-forward="true" selection-start-line="245" selection-start-column="53" selection-end-line="245" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PM_ctrlr.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/PM_ctrlr.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1666">
+              <caret line="98" column="53" lean-forward="false" selection-start-line="98" selection-start-column="53" selection-end-line="98" selection-end-column="53" />
+              <folding>
+                <marker date="1524519517570" expanded="true" signature="21533:21544" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>host</find>
+      <find>i2b2_scopedCallback</find>
+      <find>i2b2.PM.model.url</find>
+      <find>i2b2.PM.model.CAS_server</find>
+      <find>_processUserConfig</find>
+      <find>i2b2.PM</find>
+      <find>jquery_cookie</find>
+      <find>jquery</find>
+      <find>cookie</find>
+      <find>_make_dialog</find>
+      <find>afterCaslogin</find>
+      <find>login_service</find>
+      <find>login_password</find>
+      <find>CAS</find>
+      <find>session_or_ticket</find>
+      <find>pmCheckAllRequests</find>
+      <find>newXML</find>
+      <find>$newXML</find>
+      <find>$pmURL</find>
+      <find>$proxyURL</find>
+      <find>CURLOPT_POSTFIELDS</find>
+      <find>curl_exec</find>
+      <find>file_get_contents</find>
+      <find>YAHOO</find>
+      <find>query</find>
+      <find>xml</find>
+      <find>transaction</find>
+      <find>YAHOO.util.Connect.asyncRequest</find>
+      <find>/i2b2</find>
+      <find>$WHITELIST</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/plugin_installer/install.php" />
+        <option value="$PROJECT_DIR$/default.htm" />
+        <option value="$PROJECT_DIR$/js-i2b2/cells/PM/cas_login.js" />
+        <option value="$PROJECT_DIR$/i2b2_config_data.js" />
+        <option value="$PROJECT_DIR$/js-i2b2/hive/i2b2_cell_communicator.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1284" />
+    <option name="height" value="683" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="i2b2-webclient-cas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="i2b2-webclient-cas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="i2b2-webclient-cas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="i2b2-webclient-cas" type="462c0819:PsiDirectoryNode" />
+              <item name="js-i2b2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="i2b2-webclient-cas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="i2b2-webclient-cas" type="462c0819:PsiDirectoryNode" />
+              <item name="js-i2b2" type="462c0819:PsiDirectoryNode" />
+              <item name="hive" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/nchappi/git/i2b2-webclient-cas/plugin_installer/install.php" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d1b3ee9-76f3-4909-82eb-6721a67b8cc3" name="Default" comment="" />
+      <created>1520883467344</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1520883467344</updated>
+      <workItem from="1520883469972" duration="3192000" />
+      <workItem from="1521566207420" duration="599000" />
+      <workItem from="1521645266965" duration="3896000" />
+      <workItem from="1521821732298" duration="1111000" />
+      <workItem from="1521831669486" duration="8415000" />
+      <workItem from="1522161182530" duration="11011000" />
+      <workItem from="1522267577203" duration="4514000" />
+      <workItem from="1522424889652" duration="3063000" />
+      <workItem from="1522442679543" duration="1849000" />
+      <workItem from="1522461602668" duration="1118000" />
+      <workItem from="1522510652004" duration="682000" />
+      <workItem from="1522679712646" duration="10962000" />
+      <workItem from="1522853266678" duration="5969000" />
+      <workItem from="1522877726788" duration="1152000" />
+      <workItem from="1522968213921" duration="3937000" />
+      <workItem from="1523460923375" duration="4100000" />
+      <workItem from="1523624850694" duration="7281000" />
+      <workItem from="1523896204265" duration="6767000" />
+      <workItem from="1523993111191" duration="2155000" />
+      <workItem from="1524074618315" duration="4064000" />
+      <workItem from="1524511739387" duration="2290000" />
+      <workItem from="1524677570100" duration="4859000" />
+      <workItem from="1525376188723" duration="605000" />
+    </task>
+    <task id="LOCAL-00001" summary="change for proxy">
+      <created>1523480491743</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1523480491744</updated>
+    </task>
+    <task id="LOCAL-00002" summary="change for proxy">
+      <created>1523481670388</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1523481670388</updated>
+    </task>
+    <task id="LOCAL-00003" summary="change for proxy">
+      <created>1524516991007</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1524516991007</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="93591000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1438" height="776" extended-state="6" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21729958" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.098030016" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change for proxy" />
+    <option name="LAST_COMMIT_MESSAGE" value="change for proxy" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2618">
+          <caret line="154" column="72" lean-forward="true" selection-start-line="154" selection-start-column="72" selection-end-line="154" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/cas_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1887">
+          <caret line="111" column="13" lean-forward="true" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/hive/i2b2_cell_communicator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="42" lean-forward="false" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/PM_ctrlr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="98" column="53" lean-forward="false" selection-start-line="98" selection-start-column="53" selection-end-line="98" selection-end-column="53" />
+          <folding>
+            <marker date="1524519517570" expanded="true" signature="21533:21544" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/i2b2_msgs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/i2b2_config_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin_installer/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin_installer/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin_installer/installConfirm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin_installer/install.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="98" column="39" lean-forward="true" selection-start-line="98" selection-start-column="39" selection-end-line="98" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="13" lean-forward="false" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/PM_ctrlr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="98" column="53" lean-forward="true" selection-start-line="98" selection-start-column="53" selection-end-line="98" selection-end-column="53" />
+          <folding>
+            <marker date="1524519517570" expanded="true" signature="21533:21544" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/hive/hive_globals.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="29" lean-forward="false" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/cas_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="82" column="4" lean-forward="true" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/i2b2_config_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cas_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/cas_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3162">
+          <caret line="186" column="50" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/i2b2_config_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cas_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/cas_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6303">
+          <caret line="191" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="206" selection-end-column="7" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/i2b2_config_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cas_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/cas_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="88" column="40" lean-forward="false" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/i2b2_config_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cas_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/cas_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="88" column="40" lean-forward="false" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/i2b2 license 2.1-1159.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin_installer/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin_installer/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin_installer/installConfirm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/i2b2_loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="681">
+          <caret line="228" column="37" lean-forward="false" selection-start-line="228" selection-start-column="28" selection-end-line="228" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/hive/msg_sniffer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="113" column="4" lean-forward="false" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-ext/yui/build/utilities/utilities.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="16" column="4310" lean-forward="false" selection-start-line="16" selection-start-column="4310" selection-end-line="16" selection-end-column="4310" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cas_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3910">
+          <caret line="230" column="52" lean-forward="false" selection-start-line="230" selection-start-column="52" selection-end-line="230" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/hive/hive_globals.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="9" lean-forward="false" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/i2b2_msgs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/PM_ctrlr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1666">
+          <caret line="98" column="53" lean-forward="false" selection-start-line="98" selection-start-column="53" selection-end-line="98" selection-end-column="53" />
+          <folding>
+            <marker date="1524519517570" expanded="true" signature="21533:21544" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin_installer/install.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" column="17" lean-forward="false" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/cells/PM/cas_login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3077">
+          <caret line="192" column="64" lean-forward="false" selection-start-line="192" selection-start-column="64" selection-end-line="192" selection-end-column="64" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/i2b2_config_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js-i2b2/hive/i2b2_cell_communicator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4165">
+          <caret line="245" column="53" lean-forward="true" selection-start-line="245" selection-start-column="53" selection-end-line="245" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="37" column="27" lean-forward="true" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
