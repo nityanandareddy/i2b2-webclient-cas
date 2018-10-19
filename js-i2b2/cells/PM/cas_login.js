@@ -193,7 +193,7 @@ function casloginCheck(integrationmodule, domain) {
     new Ajax.Request(integrationmodule + '/proxy-resource/users/me', {
         method: 'get',
         onComplete: function (response) {
-            if (response.status === 200) {
+            if (response.status === 200 || response.status === 404) {
                 console.log("user login check success");
                 afterCaslogin(domain);
             } else if (response.status === 400) {
