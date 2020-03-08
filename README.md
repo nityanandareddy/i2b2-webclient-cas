@@ -63,5 +63,5 @@ Open the `i2b2_config_data.js` file, and add the following properties to your do
 * `EC_SUPPORT_CONTACT`: optional email address to display when an error has occurred.
 
 ## Licensing
-This code is released under the i2b2 Software License version 2.1, available at the following page5 https://www.i2b2.org/software/i2b2_license.html.
+This code is released under the i2b2 Software License version 2.1, available at the following page10 https://www.i2b2.org/software/i2b2_license.html.
 
