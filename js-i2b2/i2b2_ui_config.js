@@ -33,3 +33,5 @@ function initI2B2_UI() {
 		document.getElementById('topBarTitle').src = i2b2.UI.cfg.titleLogoSrc;
 	}
 }
+
+/*Change one test*/
